@@ -6,7 +6,7 @@ import { useState } from 'react'
 import StartPage from '../component/StartPage'
 
 export default function Home() {
-  const[show , setShow] = useState(false);
+  // const[show , setShow] = useState(false);
   
   return (
     <div className={styles.container}>
@@ -17,7 +17,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        {show ? <StartPage setShow={setShow} show={show}/> 
+        {/* {show ? <StartPage setShow={setShow} show={show}/> 
         : (<>
               <div className={styles.header}>
                 <Header />
@@ -26,7 +26,15 @@ export default function Home() {
                 <QuestionComponent />
               </div>
           </>
-        )}
+        )} */}
+        
+        <div className={styles.header}>
+          <Header />
+        </div>
+        <div className={styles.main_body}>
+          <QuestionComponent />
+        </div>
+
       </main>
     </div>
   )

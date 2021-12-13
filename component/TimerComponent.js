@@ -13,7 +13,7 @@ function TimerComponent() {
     let interval ;
 
     const startTime = () => {
-        const countDown = new Date("Dec 13, 2021 18:00:00").getTime();
+        const countDown = new Date("Dec 18, 2021 18:00:00").getTime();
 
         interval = setInterval(() => {
             const now = new Date().getTime();
