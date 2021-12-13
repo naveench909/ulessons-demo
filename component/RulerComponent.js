@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components';
-import ReactTabIndicator from "react-tab-indicator";
-import { useGlobalContext } from '../pages/context';
+import { useGlobalContext } from './context';
 
 function RulerComponent() {
 

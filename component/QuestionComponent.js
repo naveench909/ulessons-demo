@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from '../styles/QuestionComponent.module.css'
-import {useGlobalContext} from '../pages/context';
-
-import { BlockMath, InlineMath } from 'react-katex';
+import {useGlobalContext} from './context';
 
 function QuestionComponent() {
     const {questions, curDisplayQues , prevQuestion, nextQuestion, quesAndSelectedOption} = useGlobalContext();
