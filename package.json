@@ -10,9 +10,18 @@
   "dependencies": {
     "next": "12.0.7",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-icons": "^4.3.1",
+    "react-katex": "^2.0.2",
+    "react-latex": "^2.0.0",
+    "react-latex-next": "^2.1.0",
+    "react-tab-indicator": "^1.1.2",
+    "react-timer-hook": "^3.0.5",
+    "styled-component": "^2.8.0",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "babel-plugin-styled-components": "^2.0.2",
     "eslint": "8.4.1",
     "eslint-config-next": "12.0.7"
   }

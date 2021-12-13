@@ -1,0 +1,40 @@
+.container {
+  position: sticky;
+  top: 0px;
+  height: 192px;
+  /* width: 100vw; */
+  background-color: #fff;
+}
+
+.up_cntr {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.down_cntr {
+  margin-top: 72px;
+  overflow-x: scroll;
+  /* padding-left: 416px; */
+}
+
+.down_cntr::-webkit-scrollbar {
+  display: none;
+}
+
+.icon {
+  width: 65px;
+  height: 59px;
+  margin: 26px 0px 0px 96px;
+}
+
+@media only screen and (max-width: 600px) {
+  .up_cntr {
+    justify-content: space-between;
+    margin-top: 30px;
+    margin: 0px 22px 0px 0px;
+  }
+
+  .icon {
+    margin: 30px 22px 0px 0px;
+  }
+}
