@@ -45,7 +45,7 @@ function QuestionComponent() {
         // add option if not exists 
         if(beforeLength === curQues.selectedOptionArr.length)   curQues.selectedOptionArr.push(text);
     }
-
+    
     function arrayRemove(arr, value) { 
         return arr.filter(function(ele){ 
             return ele != value; 
@@ -77,7 +77,11 @@ function QuestionComponent() {
                 </div> 
 
                 <div className={styles.btn_cntr}>
-                    <div className={styles.previous_btn} onClick={prevQuestion}>Previous</div>
+                    {curDisplayQues.qid !== 1 ? 
+                        (<div className={styles.previous_btn} onClick={prevQuestion}>Previous</div>)
+                        :
+                        null
+                    }
                     {curDisplayQues.qid == questions.length ?
                         (<div className={styles.next_btn} onClick={nextQuestion}>Finish</div>)
                         :

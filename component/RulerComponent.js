@@ -52,7 +52,7 @@ const RulerComponentStyles = styled.div`
 
     .ruler_cntr{
         margin-bottom: 5px;
-        margin-right : 90px;
+        /* margin-right : 90px; */
         width: 608px;
         display: flex;
     }
@@ -96,7 +96,17 @@ const RulerComponentStyles = styled.div`
         display:flex;
         justify-content: center;
         /* align-items: center; */
+        /* font-family: Mulish; */
+        /* font-style: normal; */
+        /* font-weight: bold; */
+        /* font-size: 16px; */
+        /* line-height: 100%; */
+        /* identical to box height, or 16px */
 
+        letter-spacing: 0.4px;
+
+        color: #313848;
+        opacity: 0.5;
     }
 
     .highlight{
@@ -129,8 +139,35 @@ const RulerComponentStyles = styled.div`
         .singleID:first-child{
             padding-left: 20px;
         }
+    }
 
+    @media only screen and (max-width: 1025px){
+        .singleID:last-child{
+            padding-right: 208px;
+        }
+    }
 
+    @media only screen and (max-width: 769px){
+        .singleID:last-child{
+            padding-right: 208px;
+        }
+    }
+    @media only screen and (max-width: 426px){
+        .singleID:last-child{
+            padding-right: 85px;
+        }
+    }
+
+    @media only screen and (max-width: 376px){
+        .singleID:last-child{
+            padding-right: 26px;
+        }
+    }
+
+    @media only screen and (max-width: 321px){
+        .singleID:last-child{
+            padding-right: 20px;
+        }
     }
 
 `;

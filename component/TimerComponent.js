@@ -8,7 +8,7 @@ function TimerComponent() {
     const[timerMinutes, setTimerMinutes] = useState();
     const[timerSeconds, setTimerSeconds] = useState();
 
-    const[showTimer, setShowTimer] = useState(true);
+    const[showTimer, setShowTimer] = useState(false);
 
     let interval ;
 
