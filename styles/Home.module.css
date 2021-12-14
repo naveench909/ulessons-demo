@@ -6,15 +6,18 @@
 
 .main {
   width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.header {
-  position: sticky;
-  top: 0;
-  width: 100vw;
-  height: 192px;
-}
-
-.main_body {
-  width: 100vw;
+.btn {
+  border: transparent;
+  border-radius: 8px;
+  color: #fff;
+  background-color: darkcyan;
+  height: 40px;
+  width: 150px;
+  cursor: pointer;
 }

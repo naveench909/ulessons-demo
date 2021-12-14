@@ -77,7 +77,7 @@ const AppProvider = ({ children }) => {
 
     // console.log(quesAndSelectedOption);
     useEffect(() => {
-        setbar();
+        // setbar();
         let array = [];
         questions.map((ques) => {
             let obj = {qid : ques.qid , selectedOptionArr: []};

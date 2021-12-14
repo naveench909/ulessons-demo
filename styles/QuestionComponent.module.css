@@ -50,6 +50,11 @@
   margin-left: 17px;
 }
 
+.single_option_cntr {
+  border-radius: 8px;
+  background-color: #fff;
+}
+
 .highlight {
   background-color: #f9ad6d;
 }
