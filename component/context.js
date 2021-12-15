@@ -7,6 +7,50 @@ const AppProvider = ({ children }) => {
     const[questions , setQuestions] = useState(questionList);
     const[curDisplayQues , setCurDisplayQues] = useState(questionList[0]);
     const[quesAndSelectedOption , setQuesAndSelectedOption] = useState([]);
+
+    const innerText = (e, option_id) => {
+
+        let element = document.getElementById(`${option_id}`);
+        // console.log(element);
+
+        if(element.classList.contains("highlight")){
+            element.classList.remove("highlight");
+            element.style.backgroundColor = "";
+        }else{
+            element.classList.add("highlight");
+            element.style.backgroundColor = "#f9ad6d";
+        }
+
+        // finds current displaying question
+        let curQues = quesAndSelectedOption.find(ques => ques.qid === curDisplayQues.qid)
+        // console.log(curQues); 
+
+        let beforeLength = curQues.selectedOptionArr.length;
+        // remove option if exists
+        for(let i = 0 ; i < curQues.selectedOptionArr.length ; i++){
+            if(option_id === curQues.selectedOptionArr[i].option_id){
+                let copyArr = curQues.selectedOptionArr;
+                copyArr.splice(i,1);
+                // var result = arrayRemove(curQues.selectedOptionArr, option_id);
+
+                // console.log("after removing" , result)
+                curQues.selectedOptionArr = copyArr;
+
+            }
+
+        }
+
+        // add option if not exists 
+        if(beforeLength === curQues.selectedOptionArr.length)   curQues.selectedOptionArr.push({option_id,highlighted:true});
+
+        console.log(curQues);
+    }
+
+    function arrayRemove(arr, value) { 
+        return arr.filter(function(ele){ 
+            return ele != value; 
+        });
+    }
     
     const getCurQuestionDetails = (ques_id) => {
         highlightSkippedQues();
@@ -75,7 +119,7 @@ const AppProvider = ({ children }) => {
         element.style.display= "block";
     }
 
-    // console.log(quesAndSelectedOption);
+    console.log(quesAndSelectedOption);
     useEffect(() => {
         // setbar();
         let array = [];
@@ -90,7 +134,7 @@ const AppProvider = ({ children }) => {
         <AppContext.Provider 
             value={{
                 questions,curDisplayQues,quesAndSelectedOption,
-                getCurQuestionDetails,prevQuestion,nextQuestion
+                getCurQuestionDetails,prevQuestion,nextQuestion,innerText
             }}>
             {children}
         </AppContext.Provider>

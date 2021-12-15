@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from '../styles/QuestionComponent.module.css'
 import {useGlobalContext} from './context';
 import OptionComponent from './OptionComponent';
 
 
 function QuestionComponent() {
-    const {questions, curDisplayQues , prevQuestion, nextQuestion} = useGlobalContext();
-    
+    const {questions, curDisplayQues , prevQuestion, nextQuestion } = useGlobalContext();
+
     return (
         <div className={styles.main_container}>
             <div className={styles.question_body}>
@@ -27,7 +27,7 @@ function QuestionComponent() {
                                 //     {/* {String.fromCharCode(96+oid)}.<span className={styles.optn} onClick={(e) => innerText(e,oid)}><BlockMath>{option}</BlockMath></span> */}
                                 // </div>
                                 
-                                <OptionComponent key={oid} option={option} option_id={oid}/>
+                                <OptionComponent key={oid} option={option} option_id={oid} />
                             )
                         })}
                     </div>

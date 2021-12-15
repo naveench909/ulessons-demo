@@ -1,56 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import {useGlobalContext} from './context';
-import styles from '../styles/OptionComponent.module.css'
-import { v4 as uuidv4 } from 'uuid';
 
 
 function OptionComponent({ option_id, option}) {
-    const {curDisplayQues, quesAndSelectedOption} = useGlobalContext();
-    const [uid , setUid] = useState();
 
-    const innerText = (e) => {
-        let text = e.target.innerText;
+    const {innerText, quesAndSelectedOption, curDisplayQues} = useGlobalContext();
+    useEffect(() => {
+        for(let i = 0 ; i < quesAndSelectedOption.length; i++){
+            let curQuesResultObj;
+            if(curDisplayQues.qid === quesAndSelectedOption[i].qid){
+                curQuesResultObj = quesAndSelectedOption[i];
+                let optionArr = curQuesResultObj.selectedOptionArr;
 
-        let element = document.getElementById(uid);
-        console.log(element);
-
-        // finds current displaying question
-        let curQues = quesAndSelectedOption.find(ques => ques.qid === curDisplayQues.qid)
-        // console.log(curQues); 
-
-        let beforeLength = curQues.selectedOptionArr.length;
-        // remove option if exists
-        for(let i = 0 ; i < curQues.selectedOptionArr.length ; i++){
-            if(text === curQues.selectedOptionArr[i]){
-                var result = arrayRemove(curQues.selectedOptionArr, text);
-                // console.log("after removing" , result)
-                curQues.selectedOptionArr = result;
+                for(let i = 0 ; i < optionArr.length ; i++) document.getElementById(optionArr[i].option_id).style.backgroundColor = "#f9ad6d"
             }
         }
-
-        // add option if not exists 
-        if(beforeLength === curQues.selectedOptionArr.length)   curQues.selectedOptionArr.push(text);
-
-        // console.log(curQues); 
-    }
-    
-    function arrayRemove(arr, value) { 
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
-
-    useEffect(() => {
-        setUid(uuidv4());
-    },[])
+    })
 
     return (
-        
-        <OptionComponentStyles>
-            
-            <div id={uid}>
-                <span className='.optn' onClick={(e) => innerText(e)}>{option}</span>
+        <OptionComponentStyles id={option_id} >
+            <div className="optn_cntr">
+                <span className='.optn' onClick={(e) => innerText(e,option_id)}>{option}</span>
             </div>
         </OptionComponentStyles>
     )
@@ -73,6 +44,11 @@ const OptionComponentStyles = styled.div`
     color: #313848;
     padding: 16px;
     cursor: pointer;
+
+    .optn_cntr{
+        width: 100%;
+        height: 100%
+    }
 
     span{
         margin-left: 17px;
