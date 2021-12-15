@@ -20,28 +20,36 @@ const AppProvider = ({ children }) => {
             element.classList.add("highlight");
             element.style.backgroundColor = "#f9ad6d";
         }
-
-        // finds current displaying question
+        
         let curQues = quesAndSelectedOption.find(ques => ques.qid === curDisplayQues.qid)
-        // console.log(curQues); 
-
-        let beforeLength = curQues.selectedOptionArr.length;
-        // remove option if exists
-        for(let i = 0 ; i < curQues.selectedOptionArr.length ; i++){
-            if(option_id === curQues.selectedOptionArr[i].option_id){
-                let copyArr = curQues.selectedOptionArr;
-                copyArr.splice(i,1);
-                // var result = arrayRemove(curQues.selectedOptionArr, option_id);
-
-                // console.log("after removing" , result)
-                curQues.selectedOptionArr = copyArr;
-
+        if(curDisplayQues.multipleSelect){   
+            console.log(curDisplayQues.multipleSelect);
+            // finds current displaying question
+            // console.log(curQues); 
+            
+            let beforeLength = curQues.selectedOptionArr.length;
+            // remove option if exists
+            for(let i = 0 ; i < curQues.selectedOptionArr.length ; i++){
+                if(option_id === curQues.selectedOptionArr[i].option_id){
+                    let copyArr = curQues.selectedOptionArr;
+                    copyArr.splice(i,1);
+                    curQues.selectedOptionArr = copyArr;
+                }
+            }
+            // add option if not exists 
+            if(beforeLength === curQues.selectedOptionArr.length)   curQues.selectedOptionArr.push({option_id,highlighted:true});
+        }else{
+            if(curQues.selectedOptionArr.length > 0){
+                // console.log("curQuessfkjvbskh",curQues);
+                let prevSelectedOptionId = curQues.selectedOptionArr[0].option_id;
+                if(prevSelectedOptionId !== "") document.getElementById(prevSelectedOptionId).style.backgroundColor = ""
             }
 
+            let newSelectedOptionArr = [];
+            newSelectedOptionArr.push({option_id,highlighted:true});
+            curQues.selectedOptionArr = newSelectedOptionArr;
+            document.getElementById(option_id).style.backgroundColor = "#f9ad6d"
         }
-
-        // add option if not exists 
-        if(beforeLength === curQues.selectedOptionArr.length)   curQues.selectedOptionArr.push({option_id,highlighted:true});
 
         console.log(curQues);
     }

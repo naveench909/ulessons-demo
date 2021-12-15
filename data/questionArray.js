@@ -1,6 +1,7 @@
 export const questionList = [
     {
         qid:1,
+        multipleSelect:false,
         // questionTitle: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit dolor nulla explicabo, consequuntur assumenda aliquid corporis officiis nihil natus, esse placeat animi, dolores tempore numquam delectus exercitationem accusamus quaerat alias vel cumque molestias nobis eveniet. Eaque, autem consequatur provident sit esse adipisci rem illum. Explicabo libero eligendi quidem nesciunt, nisi accusantium vel dolorum blanditiis accusamus sed, excepturi dolorem ratione? Deleniti doloremque corporis dolores hic laudantium tempore commodi atque consequuntur repellat accusamus incidunt, nihil autem maiores mollitia cum dolorum doloribus vero perspiciatis dicta corrupti! Consequuntur aspernatur error illo quae perspiciatis ducimus soluta eos, reprehenderit corporis accusamus. Veniam iusto quas minus dolorem?",
         questionTitle:"What is your name?",
         optionArray:[
@@ -24,6 +25,7 @@ export const questionList = [
     },
     {
         qid:2,
+        multipleSelect:true,
         questionTitle: "Lorem ipsum dolor sit amet",
         optionArray:[
             {
@@ -54,6 +56,7 @@ export const questionList = [
     },
     {
         qid:3,
+        multipleSelect:false,
         questionTitle: "Who is the prime minister of india?",
         optionArray:[
             {
