@@ -1,20 +1,16 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components';
 import { useGlobalContext } from './context';
 
 function RulerComponent() {
 
-    const{ questions, getCurQuestionDetails } = useGlobalContext();
+    const{ questions, getCurQuestionDetails, curDisplayQues } = useGlobalContext();
     
-    // let itemArray = [];
-    // questions.map((ques) => {
-    //     itemArray.push(ques.qid);
-    // })
-
-
     useEffect(() => {
-        
-    }, []);
+        let id = curDisplayQues.qid;
+        let element = document.getElementById(`underline${id}`);
+        element.style.display= "block";
+    },[])
 
     return (
         <RulerComponentStyles >
@@ -30,14 +26,6 @@ function RulerComponent() {
                         </div>
                     )
                 })}
-
-                {/* <ReactTabIndicator className="ruler"
-                    items={itemArray}
-                    borderColor={"#7B7FDA"}
-                    borderHeight={3}
-                    tranfromSpeed={300}
-                    onClick={handleOnClick}
-                /> */}
             </div>
         </RulerComponentStyles>
     )

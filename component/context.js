@@ -45,12 +45,6 @@ const AppProvider = ({ children }) => {
 
         console.log(curQues);
     }
-
-    function arrayRemove(arr, value) { 
-        return arr.filter(function(ele){ 
-            return ele != value; 
-        });
-    }
     
     const getCurQuestionDetails = (ques_id) => {
         highlightSkippedQues();
@@ -103,7 +97,8 @@ const AppProvider = ({ children }) => {
     // highlights the unAnswered Question
     const highlightSkippedQues = () => {
         let curQues = quesAndSelectedOption.find(ques => ques.qid === curDisplayQues.qid);
-        console.log(curQues);
+        // console.log(curQues);
+
         let element = document.getElementById(`num${curDisplayQues.qid}`);
         if(curQues.selectedOptionArr.length === 0){
             element.classList.add('highlight');
@@ -112,16 +107,8 @@ const AppProvider = ({ children }) => {
         }
     }
 
-    // runs on page load to add style on first question
-    const setbar = () => {
-        let id = curDisplayQues.qid;
-        let element = document.getElementById(`underline${id}`);
-        element.style.display= "block";
-    }
-
-    console.log(quesAndSelectedOption);
+    // console.log(quesAndSelectedOption);
     useEffect(() => {
-        // setbar();
         let array = [];
         questions.map((ques) => {
             let obj = {qid : ques.qid , selectedOptionArr: []};

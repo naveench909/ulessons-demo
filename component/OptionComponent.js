@@ -4,18 +4,16 @@ import {useGlobalContext} from './context';
 
 
 function OptionComponent({ option_id, option}) {
-
     const {innerText, quesAndSelectedOption, curDisplayQues} = useGlobalContext();
-    useEffect(() => {
-        for(let i = 0 ; i < quesAndSelectedOption.length; i++){
-            let curQuesResultObj;
-            if(curDisplayQues.qid === quesAndSelectedOption[i].qid){
-                curQuesResultObj = quesAndSelectedOption[i];
-                let optionArr = curQuesResultObj.selectedOptionArr;
 
-                for(let i = 0 ; i < optionArr.length ; i++) document.getElementById(optionArr[i].option_id).style.backgroundColor = "#f9ad6d"
+    useEffect(() => {
+        quesAndSelectedOption.map((quesResultObj) => {
+            if(quesResultObj.qid === curDisplayQues.qid){
+                quesResultObj.selectedOptionArr.map((option_arr) => {
+                    document.getElementById(option_arr.option_id).style.backgroundColor = "#f9ad6d"
+                })
             }
-        }
+        })
     })
 
     return (
