@@ -1,12 +1,13 @@
-import React, { useState, useContext, useEffect, useRef} from 'react';
+import React, { useState, useContext, useLayoutEffect, useEffect} from 'react';
 import { questionList } from '../data/questionArray';
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-
+    
     const[questions , setQuestions] = useState(questionList);
     const[curDisplayQues , setCurDisplayQues] = useState(questionList[0]);
     const[quesAndSelectedOption , setQuesAndSelectedOption] = useState([]);
+    const [size, setSize] = useState([0, 0]);
 
     const innerText = (e, option_id) => {
 
@@ -54,6 +55,7 @@ const AppProvider = ({ children }) => {
         console.log(curQues);
     }
     
+    // gives details of current question
     const getCurQuestionDetails = (ques_id) => {
         highlightSkippedQues();
         let element = document.getElementById(ques_id);
@@ -84,6 +86,7 @@ const AppProvider = ({ children }) => {
         })
     }
 
+    // gives you details of previous question
     const prevQuestion = () => { 
         let curQuesId = curDisplayQues.qid;
         if(curQuesId < 2){
@@ -93,11 +96,13 @@ const AppProvider = ({ children }) => {
         getCurQuestionDetails(curQuesId - 1);
     }
 
+    // gives you details of next question
     const nextQuestion = ()=> {
         let curQuesId = curDisplayQues.qid;
         if(curQuesId > questions.length-1){
             return;
         }
+
         // highlightSkippedQues();
         getCurQuestionDetails(curQuesId + 1);
     }
@@ -108,13 +113,20 @@ const AppProvider = ({ children }) => {
         // console.log(curQues);
 
         let element = document.getElementById(`num${curDisplayQues.qid}`);
+        // console.log("sdjfysgeufygakyy",element);
         if(curQues.selectedOptionArr.length === 0){
-            element.classList.add('highlight');
+            element.style.borderColor = "rgba(249, 173, 109, 1)"
+            element.style.backgroundColor = "rgba(249, 173, 109, 0.50)"
         }else if(curQues.selectedOptionArr.length !== 0){
-            element.classList.remove('highlight');
+            element.style.borderColor = "rgba(249, 173, 109, 0)"
+            element.style.backgroundColor = "rgba(249, 173, 109,0)"
         }
     }
 
+    function updateSize() {
+        setSize([window.innerWidth, window.innerHeight]);
+    }
+    
     // console.log(quesAndSelectedOption);
     useEffect(() => {
         let array = [];
@@ -125,10 +137,16 @@ const AppProvider = ({ children }) => {
         setQuesAndSelectedOption(array);
     },[])
 
+    useLayoutEffect(() => {
+        window.addEventListener('resize', updateSize);
+        updateSize();
+        return () => window.removeEventListener('resize', updateSize);
+    }, []);
+    
     return(
         <AppContext.Provider 
-            value={{
-                questions,curDisplayQues,quesAndSelectedOption,
+        value={{
+            questions,curDisplayQues,quesAndSelectedOption,size,
                 getCurQuestionDetails,prevQuestion,nextQuestion,innerText
             }}>
             {children}

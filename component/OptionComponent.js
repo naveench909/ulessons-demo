@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {useGlobalContext} from './context';
 
 
-function OptionComponent({ option_id, option}) {
+function OptionComponent({ option_id, OSN, option}) {
     const {innerText, quesAndSelectedOption, curDisplayQues} = useGlobalContext();
 
     useEffect(() => {
@@ -17,9 +17,9 @@ function OptionComponent({ option_id, option}) {
     })
 
     return (
-        <OptionComponentStyles id={option_id} >
+        <OptionComponentStyles id={option_id} onClick={(e) => innerText(e,option_id)}>
             <div className="optn_cntr">
-                <span className='.optn' onClick={(e) => innerText(e,option_id)}>{option}</span>
+                {OSN}.<span className='.optn'>{option}</span>
             </div>
         </OptionComponentStyles>
     )

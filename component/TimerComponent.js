@@ -125,25 +125,26 @@ const TimerComponentStyles = styled.div`
         left: 0;
         right: 0;
         bottom: 0;
-        padding-left:1px;
+        /* padding-left:2px; */
         display:flex;
         align-items: center;
         background-color: #DFE6EE;
-        -webkit-transition: .4s;
-        transition: .4s;
+        -webkit-transition: .3s;
+        transition: .3s;
     }
 
 
     .slider:before {
         position: absolute;
         content: "";
+        /* left:2px; */
         height: 18px;
         width: 18px;
         /* left: 4px;
         bottom: 4px; */
         background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
+        -webkit-transition: .3s;
+        transition: .3s;
     }
 
     input:checked + .slider {
@@ -169,7 +170,11 @@ const TimerComponentStyles = styled.div`
         border-radius: 50%;
     }
 
-    
+    /* @media screen only and (max-width: 426px){
+        .timer{
+            margin: 43px 0px 0px 0px;
+        }
+    } */
 `;
 
 export default TimerComponent

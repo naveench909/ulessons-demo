@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import { useGlobalContext } from './context';
 
 function RulerComponent() {
-
     const{ questions, getCurQuestionDetails, curDisplayQues } = useGlobalContext();
-    
     useEffect(() => {
         let id = curDisplayQues.qid;
         let element = document.getElementById(`underline${id}`);
@@ -20,8 +18,8 @@ function RulerComponent() {
                     return(
                         <div key={qid} className= "singleID" onClick={() => getCurQuestionDetails(qid)} id={`${qid}`}>
                             <div className='singleID_info'>
-                                <span id={`num${qid}`}>{qid}</span>
-                                <div id={`underline${qid}`}className='underline'></div>
+                                <span id={`num${qid}`} className='highlight'>{qid}</span>
+                                <div id={`underline${qid}`} className='underline'></div>
                             </div>
                         </div>
                     )
@@ -35,10 +33,9 @@ const RulerComponentStyles = styled.div`
     width: 100vw;
     display: flex;
     justify-content: center;
-    /* padding-left: 90px; */
 
     .ruler_cntr{
-        margin-bottom: 5px;
+        /* margin-bottom: 5px; */
         /* margin-right : 90px; */
         width: 608px;
         display: flex;
@@ -59,6 +56,7 @@ const RulerComponentStyles = styled.div`
         justify-content: center;
         align-items: center;
         width: 23px;
+
     }
 
     .underline{
@@ -79,16 +77,15 @@ const RulerComponentStyles = styled.div`
 
     span{
         width: 100%;
-        height: 90%;
+        height: 23px;
         display:flex;
         justify-content: center;
-        /* align-items: center; */
-        /* font-family: Mulish; */
-        /* font-style: normal; */
-        /* font-weight: bold; */
-        /* font-size: 16px; */
-        /* line-height: 100%; */
-        /* identical to box height, or 16px */
+        align-items: center;
+        font-family: Mulish;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 100%;
 
         letter-spacing: 0.4px;
 
@@ -97,15 +94,18 @@ const RulerComponentStyles = styled.div`
     }
 
     .highlight{
-        background: rgba(249, 173, 109, 0.25);
-        border: 2px solid #F9AD6D;
+        /* background: rgba(249, 173, 109, 0.25);
         box-sizing: border-box;
+        border-radius: 50%; */
+        
+        
+        border: 2px solid rgba(249, 173, 109, 0);
+        background-color: rgba(249, 173, 109, 0); 
         border-radius: 50%;
     }
 
     @media only screen and (max-width: 1000px) {
         .ruler_cntr {
-            /* background-color: lightblue; */
             margin-right: 0px;
         }
 
@@ -118,16 +118,6 @@ const RulerComponentStyles = styled.div`
         }
     }
 
-    @media only screen and (max-width: 600px){
-        .ruler_cntr{
-            width: 100%;
-        }
-
-        .singleID:first-child{
-            padding-left: 20px;
-        }
-    }
-
     @media only screen and (max-width: 1025px){
         .singleID:last-child{
             padding-right: 208px;
@@ -136,22 +126,38 @@ const RulerComponentStyles = styled.div`
 
     @media only screen and (max-width: 769px){
         .singleID:last-child{
-            padding-right: 208px;
+            padding-right: 80px;
         }
     }
     @media only screen and (max-width: 426px){
+        .ruler_cntr{
+            width: 100%;
+            padding : 0px 20px;
+        }
+
         .singleID:last-child{
-            padding-right: 85px;
+            padding-right: 25px;
         }
     }
 
     @media only screen and (max-width: 376px){
+
+        .ruler_cntr{
+            width: 100%;
+            padding : 0px 20px;
+        }
+
         .singleID:last-child{
-            padding-right: 26px;
+            padding-right: 20px;
         }
     }
 
     @media only screen and (max-width: 321px){
+        .ruler_cntr{
+            width: 100%;
+            padding : 0px 20px;
+        }
+
         .singleID:last-child{
             padding-right: 20px;
         }
