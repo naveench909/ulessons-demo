@@ -1,8 +1,10 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import Link from 'next/link';
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
+import { useGlobalContext } from '../component/context';
 
 export default function Home() {  
+  const {setToken} = useGlobalContext();
   return (
     <div className={styles.container}>
       <Head>
@@ -12,7 +14,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Link href="/home"><a><button className={styles.btn}>Start Test</button></a></Link>
+        <Link href="/home"><a><button className={styles.btn} onClick={setToken}>Start Test</button></a></Link>
       </main>
     </div>
   )

@@ -35,14 +35,11 @@ const RulerComponentStyles = styled.div`
     justify-content: center;
 
     .ruler_cntr{
-        /* margin-bottom: 5px; */
-        /* margin-right : 90px; */
         width: 608px;
         display: flex;
     }
 
     .singleID{
-        /* padding-left: 36px; */
         padding-right: 36px;
         cursor: pointer;
         display: flex;
@@ -93,12 +90,7 @@ const RulerComponentStyles = styled.div`
         opacity: 0.5;
     }
 
-    .highlight{
-        /* background: rgba(249, 173, 109, 0.25);
-        box-sizing: border-box;
-        border-radius: 50%; */
-        
-        
+    .highlight{      
         border: 2px solid rgba(249, 173, 109, 0);
         background-color: rgba(249, 173, 109, 0); 
         border-radius: 50%;
@@ -129,6 +121,7 @@ const RulerComponentStyles = styled.div`
             padding-right: 80px;
         }
     }
+
     @media only screen and (max-width: 426px){
         .ruler_cntr{
             width: 100%;

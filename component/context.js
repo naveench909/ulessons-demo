@@ -23,11 +23,7 @@ const AppProvider = ({ children }) => {
         }
         
         let curQues = quesAndSelectedOption.find(ques => ques.qid === curDisplayQues.qid)
-        if(curDisplayQues.multipleSelect){   
-            console.log(curDisplayQues.multipleSelect);
-            // finds current displaying question
-            // console.log(curQues); 
-            
+        if(curDisplayQues.multipleSelect){            
             let beforeLength = curQues.selectedOptionArr.length;
             // remove option if exists
             for(let i = 0 ; i < curQues.selectedOptionArr.length ; i++){
@@ -41,7 +37,6 @@ const AppProvider = ({ children }) => {
             if(beforeLength === curQues.selectedOptionArr.length)   curQues.selectedOptionArr.push({option_id,highlighted:true});
         }else{
             if(curQues.selectedOptionArr.length > 0){
-                // console.log("curQuessfkjvbskh",curQues);
                 let prevSelectedOptionId = curQues.selectedOptionArr[0].option_id;
                 if(prevSelectedOptionId !== "") document.getElementById(prevSelectedOptionId).style.backgroundColor = ""
             }
@@ -60,8 +55,6 @@ const AppProvider = ({ children }) => {
         highlightSkippedQues();
         let element = document.getElementById(ques_id);
         let obj =  element.getBoundingClientRect();
-        // console.log(obj.left);
-        // console.log(Math.floor(window.outerWidth/2));
         
         if(obj.left > (Math.floor(window.outerWidth/2))){
             document.getElementById('ruler_cntr').scrollLeft += obj.left - (Math.floor(window.outerWidth/2));
@@ -110,10 +103,8 @@ const AppProvider = ({ children }) => {
     // highlights the unAnswered Question
     const highlightSkippedQues = () => {
         let curQues = quesAndSelectedOption.find(ques => ques.qid === curDisplayQues.qid);
-        // console.log(curQues);
 
         let element = document.getElementById(`num${curDisplayQues.qid}`);
-        // console.log("sdjfysgeufygakyy",element);
         if(curQues.selectedOptionArr.length === 0){
             element.style.borderColor = "rgba(249, 173, 109, 1)"
             element.style.backgroundColor = "rgba(249, 173, 109, 0.50)"
@@ -123,8 +114,15 @@ const AppProvider = ({ children }) => {
         }
     }
 
+    //updates size of current screen
     function updateSize() {
         setSize([window.innerWidth, window.innerHeight]);
+    }
+
+    // set Token in cookies
+    const setToken = () => {
+        let obj = {id: 2 , name: "Naveen Kumar"}
+        
     }
     
     // console.log(quesAndSelectedOption);
@@ -147,7 +145,7 @@ const AppProvider = ({ children }) => {
         <AppContext.Provider 
         value={{
             questions,curDisplayQues,quesAndSelectedOption,size,
-                getCurQuestionDetails,prevQuestion,nextQuestion,innerText
+            getCurQuestionDetails,prevQuestion,nextQuestion,innerText,setToken
             }}>
             {children}
         </AppContext.Provider>

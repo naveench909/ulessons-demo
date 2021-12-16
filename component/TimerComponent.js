@@ -8,7 +8,7 @@ function TimerComponent() {
     const[timerMinutes, setTimerMinutes] = useState();
     const[timerSeconds, setTimerSeconds] = useState();
 
-    const[showTimer, setShowTimer] = useState(false);
+    const[showTimer, setShowTimer] = useState(true);
 
     let interval ;
 
@@ -52,7 +52,7 @@ function TimerComponent() {
                         <line x1="11" y1="6" x2="11" y2="12" stroke="#7B7FDA" strokeWidth="2"/>
                     </svg> */}
                     <label className="switch">
-                        <input type="checkbox" onClick={() => setShowTimer(!showTimer)}/>
+                        <input type="checkbox" onClick={() => setShowTimer(!showTimer)} defaultChecked/>
                         <span className="slider round"></span>
                     </label>
                 </div>
@@ -170,11 +170,12 @@ const TimerComponentStyles = styled.div`
         border-radius: 50%;
     }
 
-    /* @media screen only and (max-width: 426px){
+    @media only screen and (max-width: 426px){
         .timer{
             margin: 43px 0px 0px 0px;
+            /* background-color: red; */
         }
-    } */
+    }
 `;
 
 export default TimerComponent
