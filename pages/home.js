@@ -37,6 +37,12 @@ const HomeStyles = styled.div`
 
     .main_body {
         width: 100vw;
+        /* overflow-y: scroll; */
+
+    }
+
+    .main_body::-webkit-scrollbar{
+        /* display:none; */
     }
 
 `;

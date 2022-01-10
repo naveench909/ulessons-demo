@@ -12,6 +12,13 @@
   align-items: center;
 }
 
+.btn_cntr {
+  width: 500px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .btn {
   border: transparent;
   border-radius: 8px;

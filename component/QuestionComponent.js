@@ -18,8 +18,9 @@ function QuestionComponent() {
                     <div className={styles.option_list}>
                         {curDisplayQues.optionArray.map((optn) => {
                             const {oid , optionSN ,option} = optn;
-                            return  <OptionComponent key={oid} option={option} option_id={oid} OSN={optionSN}/>
+                            return  <OptionComponent key={oid} option={option} option_id={oid} OSN={optionSN} />
                         })}
+
                     </div>
                 </div> 
 

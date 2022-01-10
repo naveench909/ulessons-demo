@@ -1,9 +1,11 @@
 import React, { useState, useContext, useLayoutEffect, useEffect} from 'react';
 import { questionList } from '../data/questionArray';
+import { examObjs } from '../data/examObject';
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
     
+    const[examObject , setExamObject] = useState([]);
     const[questions , setQuestions] = useState(questionList);
     const[curDisplayQues , setCurDisplayQues] = useState(questionList[0]);
     const[quesAndSelectedOption , setQuesAndSelectedOption] = useState([]);
@@ -13,7 +15,7 @@ const AppProvider = ({ children }) => {
 
         let element = document.getElementById(`${option_id}`);
         // console.log(element);
-
+        
         if(element.classList.contains("highlight")){
             element.classList.remove("highlight");
             element.style.backgroundColor = "";
@@ -47,6 +49,7 @@ const AppProvider = ({ children }) => {
             document.getElementById(option_id).style.backgroundColor = "#f9ad6d"
         }
 
+        highlightSkippedQues();
         console.log(curQues);
     }
     
@@ -122,10 +125,33 @@ const AppProvider = ({ children }) => {
     // set Token in cookies
     const setToken = () => {
         let obj = {id: 2 , name: "Naveen Kumar"}
-        
+
     }
     
+    // Mock Exam Screen
+    const registerForExam = (examUid , onClose) =>{
+        console.log(examUid);
+
+        let examObjectCopy = examObject.find( exam => exam.exam_uid === examUid);
+        console.log("examObjectCopy",examObjectCopy);
+
+        examObjectCopy.isRegisterd = true;
+        
+        for(let i = 0; i < examObject.length; i++){
+            if(examObject[i].exam_uid === examUid){
+                examObject[i] = examObjectCopy;
+                break;
+            }
+        }
+
+        onClose();
+    }
+
+
+
+
     // console.log(quesAndSelectedOption);
+    console.log("examObject",examObject)
     useEffect(() => {
         let array = [];
         questions.map((ques) => {
@@ -133,19 +159,22 @@ const AppProvider = ({ children }) => {
             array.push(obj);
         })
         setQuesAndSelectedOption(array);
+
+        setExamObject(examObjs);
+
     },[])
 
-    useLayoutEffect(() => {
-        window.addEventListener('resize', updateSize);
-        updateSize();
-        return () => window.removeEventListener('resize', updateSize);
-    }, []);
+    // useLayoutEffect(() => {
+    //     window.addEventListener('resize', updateSize);
+    //     updateSize();
+    //     return () => window.removeEventListener('resize', updateSize);
+    // }, []);
     
     return(
         <AppContext.Provider 
         value={{
-            questions,curDisplayQues,quesAndSelectedOption,size,
-            getCurQuestionDetails,prevQuestion,nextQuestion,innerText,setToken
+            questions,curDisplayQues,quesAndSelectedOption,size,examObject,
+            getCurQuestionDetails,prevQuestion,nextQuestion,innerText,setToken,registerForExam
             }}>
             {children}
         </AppContext.Provider>

@@ -13,7 +13,7 @@ function TimerComponent() {
     let interval ;
 
     const startTime = () => {
-        const countDown = new Date("Dec 18, 2021 18:00:00").getTime();
+        const countDown = new Date("Dec 28, 2021 23:00:00").getTime();
 
         interval = setInterval(() => {
             const now = new Date().getTime();
@@ -137,7 +137,7 @@ const TimerComponentStyles = styled.div`
     .slider:before {
         position: absolute;
         content: "";
-        /* left:2px; */
+        left:2px;
         height: 18px;
         width: 18px;
         /* left: 4px;
@@ -156,9 +156,9 @@ const TimerComponentStyles = styled.div`
     }
 
     input:checked + .slider:before {
-        -webkit-transform: translateX(18px);
-        -ms-transform: translateX(18px);
-        transform: translateX(18px);
+        -webkit-transform: translateX(16px);
+        -ms-transform: translateX(16px);
+        transform: translateX(16px);
     }
 
     /* Rounded sliders */
@@ -173,7 +173,6 @@ const TimerComponentStyles = styled.div`
     @media only screen and (max-width: 426px){
         .timer{
             margin: 43px 0px 0px 0px;
-            /* background-color: red; */
         }
     }
 `;

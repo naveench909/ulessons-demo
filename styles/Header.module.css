@@ -1,6 +1,6 @@
 .container {
-  position: sticky;
-  top: 0px;
+  /* position: sticky;
+  top: 0px; */
   height: 192px;
   /* width: 100vw; */
   background-color: #fff;
@@ -49,6 +49,7 @@
 .down_cntr {
   margin-top: 72px;
   overflow-x: scroll;
+  scroll-behavior: smooth;
   /* padding-left: 416px; */
 }
 
