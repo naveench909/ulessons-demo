@@ -3,7 +3,6 @@ import styles from '../styles/QuestionComponent.module.css'
 import {useGlobalContext} from './context';
 import OptionComponent from './OptionComponent';
 
-
 function QuestionComponent() {
     const {questions, curDisplayQues , prevQuestion, nextQuestion } = useGlobalContext();
 

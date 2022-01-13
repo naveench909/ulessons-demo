@@ -5,7 +5,7 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
     
-    const[examObject , setExamObject] = useState([]);
+    const[allExams , setAllExams] = useState(examObjs);
     const[questions , setQuestions] = useState(questionList);
     const[curDisplayQues , setCurDisplayQues] = useState(questionList[0]);
     const[quesAndSelectedOption , setQuesAndSelectedOption] = useState([]);
@@ -132,14 +132,14 @@ const AppProvider = ({ children }) => {
     const registerForExam = (examUid , onClose) =>{
         console.log(examUid);
 
-        let examObjectCopy = examObject.find( exam => exam.exam_uid === examUid);
+        let examObjectCopy = allExams.find( exam => exam.exam_uid === examUid);
         console.log("examObjectCopy",examObjectCopy);
 
         examObjectCopy.isRegisterd = true;
         
-        for(let i = 0; i < examObject.length; i++){
-            if(examObject[i].exam_uid === examUid){
-                examObject[i] = examObjectCopy;
+        for(let i = 0; i < allExams.length; i++){
+            if(allExams[i].exam_uid === examUid){
+                allExams[i] = examObjectCopy;
                 break;
             }
         }
@@ -151,18 +151,18 @@ const AppProvider = ({ children }) => {
 
 
     // console.log(quesAndSelectedOption);
-    console.log("examObject",examObject)
-    useEffect(() => {
-        let array = [];
-        questions.map((ques) => {
-            let obj = {qid : ques.qid , selectedOptionArr: []};
-            array.push(obj);
-        })
-        setQuesAndSelectedOption(array);
+    console.log("all Exams",allExams);
+    // useEffect(() => {
+    //     let array = [];
+    //     questions.map((ques) => {
+    //         let obj = {qid : ques.qid , selectedOptionArr: []};
+    //         array.push(obj);
+    //     })
+    //     setQuesAndSelectedOption(array);
 
-        setExamObject(examObjs);
+    //     setExamObject(examObjs);
 
-    },[])
+    // },[])
 
     // useLayoutEffect(() => {
     //     window.addEventListener('resize', updateSize);
@@ -173,7 +173,7 @@ const AppProvider = ({ children }) => {
     return(
         <AppContext.Provider 
         value={{
-            questions,curDisplayQues,quesAndSelectedOption,size,examObject,
+            questions,curDisplayQues,quesAndSelectedOption,size,allExams,
             getCurQuestionDetails,prevQuestion,nextQuestion,innerText,setToken,registerForExam
             }}>
             {children}

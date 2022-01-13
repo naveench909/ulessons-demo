@@ -5,21 +5,17 @@ import Popup from '../component/Popup';
 function ExamComponent({examObj}) {
     const [showModal, setShowModal] = React.useState(false);
 
-
     const openPopup = (exam_object) => {
         console.log(exam_object);
 
         if(!exam_object.isRegisterd)   setShowModal(true); 
     }
 
-
     return (
         <>
         {examObj ? 
         (
             <ExamComponentStyles>
-            
-
             <div className='first'>
                 <div className="first_child">
                     <div className='exam_image'>
@@ -110,17 +106,15 @@ function ExamComponent({examObj}) {
                 <button onClick={() => openPopup(examObj)}>{examObj.isRegisterd ? "Starting in 2:43" : "register for exam"}</button>
             </div>
             {showModal ? <Popup examObject={examObj} show={showModal} onClose={() => setShowModal(!showModal)} /> : null}
-        </ExamComponentStyles>) : null}
+            </ExamComponentStyles>) : null}
         </>
     )
 }
+
 const ExamComponentStyles = styled.div`
-    /* width: 100%; */
     height: 249px;
-    /* width: 395px; */
     background-color: #fff;
     border-radius: 12px;
-    /* padding: 17px 16px 18px 16px; */
     padding: 20px;
 
     .first{
@@ -139,19 +133,9 @@ const ExamComponentStyles = styled.div`
         justify-content:flex-start;
     }
 
-    .second_child{
-        width: 200px;
-        display:flex;
-        align-items: center;
-        justify-content:flex-end;
-        gap:7px;
-    }
-
     .exam_title{
         margin-left: 4.37px;
-        /* width: 103px; */
         height:11px;
-
         font-family: Mulish;
         font-style: normal;
         font-weight: 800;
@@ -161,15 +145,21 @@ const ExamComponentStyles = styled.div`
         align-items: center;
         letter-spacing: 2px;
         text-transform: uppercase;
-
         color: #313848;
         opacity: 0.9;
     }
 
- 
+    .second_child{
+        width: 200px;
+        display:flex;
+        align-items: center;
+        justify-content:flex-end;
+        gap:7px;
+    }
+
     .exam_class{
         max-height:12px;
-
+        width:30px;
         font-family: Mulish;
         font-style: normal;
         font-weight: 800;
@@ -180,29 +170,23 @@ const ExamComponentStyles = styled.div`
         justify-content: flex-start;
         letter-spacing: 0.4px;
         text-transform: uppercase;
-
         color: #313848;
-
         opacity: 0.7;
     }
 
     .registration_end_div{
         width: 166px;
         height: 24px;
-        
         font-family: Mulish;
         font-style: normal;
         font-weight: bold;
         font-size: 11px;
         line-height: 109.2%;
-
         display: flex;
         justify-content:center;
         align-items: center;
         letter-spacing: 0.4px;
-
         color: #DA0000;
-
         background: rgba(218, 0, 0, 0.1);
         border-radius: 5px;
     } 
@@ -217,7 +201,6 @@ const ExamComponentStyles = styled.div`
         font-size: 13px;
         line-height: 16px;
         letter-spacing: 0.4px;
-
         color: #8B8F99;
     }
 
@@ -245,7 +228,6 @@ const ExamComponentStyles = styled.div`
         display: flex;
         align-items: center;
         letter-spacing: 0.3px;
-
         color: #313848;
     }
     .exam_totalQues{
@@ -283,7 +265,6 @@ const ExamComponentStyles = styled.div`
         display: flex;
         align-items: center;
         letter-spacing: 0.3px;
-
         color: #313848;
     }
 
@@ -306,7 +287,6 @@ const ExamComponentStyles = styled.div`
         color: #313848;
     }
 
-
     .fourth{
         width: 100%;
         height: 42px;
@@ -320,13 +300,11 @@ const ExamComponentStyles = styled.div`
         border-radius: 8px;
         background: inherit;
         border: inherit;
-
         font-family: Mulish;
         font-style: normal;
         text-transform: Uppercase;
         font-size: 14px;
         line-height: 109.2%;
-
         display: flex;
         justify-content: center;
         align-items: center;

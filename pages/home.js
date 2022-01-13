@@ -13,7 +13,6 @@ function Home() {
                 <div className='main_body'>
                     <QuestionComponent />
                 </div>
-
             </main>
         </HomeStyles>
     )

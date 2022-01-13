@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import Link from 'next/link';
+
 function MockExamHeaderComponent() {
     return (
         <MockExamHeaderStyles>
@@ -17,8 +19,8 @@ function MockExamHeaderComponent() {
             </div>
 
             <div className="btn_cntr">
-                <button className="all_exam">all exams</button>
-                <button className="my_exam">my exams</button>
+                <Link href='/mockExam/allExams'><a><button className="all_exam">all exams</button></a></Link>
+                <Link href='/mockExam/myExams'><a><button className="my_exam">my exams</button></a></Link>
             </div>
         </MockExamHeaderStyles>
     )
@@ -36,10 +38,7 @@ const MockExamHeaderStyles = styled.div`
         display: flex;
         align-items: center;
         justify-content: flex-start;
-    }
-
-    .icon{
-
+        margin-left:81px;
     }
 
     .title{
@@ -64,36 +63,44 @@ const MockExamHeaderStyles = styled.div`
         width: 100vw;
         height: 50%;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         align-items: center;
+        margin-left:94px;
     }
 
     .all_exam, .my_exam{
-        width: 30%;
+        width: 100px;
         height: inherit;
         text-align: center;
     }
 
     button{
         border: transparent;
+        width:inherit;
         background-color: transparent;
-
         height: inherit;
-
         font-family: Mulish;
         font-style: normal;
         font-weight: bold;
         font-size: 11px;
         line-height: 115.46%;
-        /* identical to box height, or 13px */
-
         text-align: center;
         letter-spacing: 1px;
         text-transform: uppercase;
-
         color: #313848;
         opacity: 0.4;
+        cursor:pointer;
+    }
 
+    @media only screen and (max-width: 500px) {
+        .title_cntr {
+            margin-left: 18px;
+        }
+
+        .btn_cntr{
+            margin-left: 0;
+            justify-content:space-evenly;
+        }
     }
 `;
 

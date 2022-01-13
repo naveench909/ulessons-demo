@@ -13,8 +13,6 @@ export const examObjs = [
         exam_description: "Practice with the JAMB Mathematics syllabus in time for your exam.",
         exam_questionList: questionList,
         total_students: 45,
-
-
     },
     {
         exam_uid: 2,
@@ -29,8 +27,6 @@ export const examObjs = [
         exam_description: "Practice with the JAMB Mathematics syllabus in time for your exam.",
         exam_questionList: questionList,
         total_students: 45,
-
-
     },
     {
         exam_uid: 3,

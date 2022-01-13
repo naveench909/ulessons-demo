@@ -1,0 +1,58 @@
+.mockExam_cntr {
+  height: 100vh;
+  width: 100vw;
+}
+
+.mockexam_header {
+  position: sticky;
+  top: 0;
+}
+
+.mockexam_body_cntr {
+  height: calc(100vh - 112px);
+  padding: 42px 98px 77px 96px;
+  overflow-y: scroll;
+}
+
+.mockexam_body_cntr::-webkit-scrollbar {
+  display: none;
+}
+
+.exam_component_list {
+  padding: 41px 0px 0px 0px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  row-gap: 29px;
+  column-gap: 32px;
+}
+
+.image_cntr {
+  width: inherit;
+  height: 319px;
+  background-color: #7b7fda;
+  border-radius: 8px;
+}
+
+@media only screen and (max-width: 1341px) {
+  .exam_component_list {
+    grid-template-columns: auto auto;
+    padding: 41px 0px 0px 0px;
+  }
+}
+
+@media only screen and (max-width: 946px) {
+  .exam_component_list {
+    grid-template-columns: auto;
+    padding: 41px 0px 0px 0px;
+  }
+}
+
+@media only screen and (max-width: 554px) {
+  .mockexam_body_cntr {
+    padding: 42px 17px 77px 17px;
+  }
+
+  .image_cntr {
+    height: 144px;
+  }
+}
