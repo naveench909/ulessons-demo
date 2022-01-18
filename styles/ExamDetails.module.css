@@ -1,0 +1,220 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: #e5e5e5;
+  padding: 71px 53px 135px 96px;
+}
+
+.icon {
+  width: 36.47px;
+  height: 10.21px;
+}
+
+.examDetails {
+  margin-top: 47.79px;
+  width: 100%;
+}
+
+.first {
+  display: flex;
+}
+
+.examTitleAndImage {
+  height: 59px;
+  display: flex;
+  column-gap: 11.78px;
+}
+
+.examTitleAndGrade {
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.examTitle {
+  font-family: Itim;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 27.7274px;
+  line-height: 100%;
+  /* identical to box height, or 28px */
+
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+
+  color: #313848;
+
+  opacity: 0.9;
+}
+
+.examGrade {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 100%;
+  /* or 16px */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+
+  color: #313848;
+
+  opacity: 0.5;
+}
+
+.second {
+  margin-top: 27px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+
+  letter-spacing: 0.4px;
+
+  color: #313848;
+
+  opacity: 0.7;
+}
+
+.third {
+  margin-top: 32px;
+  max-width: 1248px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.examDate,
+.examTime,
+.examQuestion,
+.examStudents {
+  width: 288px;
+  height: 120px;
+  border-radius: 12px;
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+}
+
+.dateIcon,
+.timeIcon,
+.studentIcon,
+.questionIcon {
+  height: 28.4px;
+  width: 28.4px;
+  border-radius: 50%;
+  border: 3px solid #56a7d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeIcon {
+  border-color: #f9ad6d;
+}
+
+.questionIcon {
+  border-color: #ea7052;
+}
+.studentIcon {
+  border-color: #6abc68;
+}
+
+.examDateTitle {
+  width: 129px;
+  height: 32px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 133.03%;
+  /* or 16px */
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: #313848;
+
+  opacity: 0.4;
+}
+
+.examDateContent {
+  display: flex;
+  justify-content: space-between;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 114.21%;
+  /* identical to box height, or 27px */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.985963px;
+
+  color: #313848;
+}
+
+.fourth {
+  margin-top: 56px;
+}
+
+.fourthDivHeading {
+  font-family: Itim;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 114.21%;
+  /* identical to box height, or 27px */
+
+  color: #313848;
+}
+
+.instructionList {
+}
+
+.point {
+  margin-right: 8px;
+}
+
+.instruction {
+  min-height: 18px;
+  margin-bottom: 16px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 100%;
+  /* or 14px */
+
+  letter-spacing: 0.4px;
+
+  color: #313848;
+
+  opacity: 0.7;
+}
+
+.fifth {
+  margin-top: 56px;
+}
+
+.fifthHeading {
+  font-family: Itim;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 114.21%;
+  /* identical to box height, or 27px */
+
+  letter-spacing: 0.2px;
+
+  color: #313848;
+}

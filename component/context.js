@@ -132,13 +132,13 @@ const AppProvider = ({ children }) => {
     const registerForExam = (examUid , onClose) =>{
         console.log(examUid);
 
-        let examObjectCopy = allExams.find( exam => exam.exam_uid === examUid);
+        let examObjectCopy = allExams.find( exam => exam._id === examUid);
         console.log("examObjectCopy",examObjectCopy);
 
-        examObjectCopy.isRegisterd = true;
+        examObjectCopy.is_registerd = true;
         
         for(let i = 0; i < allExams.length; i++){
-            if(allExams[i].exam_uid === examUid){
+            if(allExams[i]._id === examUid){
                 allExams[i] = examObjectCopy;
                 break;
             }

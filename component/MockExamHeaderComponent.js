@@ -19,8 +19,8 @@ function MockExamHeaderComponent() {
             </div>
 
             <div className="btn_cntr">
-                <Link href='/mockExam/allExams'><a><button className="all_exam">all exams</button></a></Link>
-                <Link href='/mockExam/myExams'><a><button className="my_exam">my exams</button></a></Link>
+                <Link href='/'><a><button className="all_exam">all exams</button></a></Link>
+                <Link href='/myExams'><a><button className="my_exam">my exams</button></a></Link>
             </div>
         </MockExamHeaderStyles>
     )

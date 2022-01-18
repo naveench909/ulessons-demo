@@ -24,7 +24,7 @@ function Popup({show, onClose, examObject}) {
                   <div className="description">
                     Are you sure you want to register for this exam
                   </div>
-                  <button className="register_btn" onClick={() => registerForExam(examObject.exam_uid, onClose)}>yes! register</button>
+                  <button className="register_btn" onClick={() => registerForExam(examObject._id, onClose)}>yes! register</button>
                   <button className="cancel_btn" onClick={onClose}>cancel</button>
                 </div>
                 }
