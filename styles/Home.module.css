@@ -2,39 +2,94 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-.mockExam_cntr {
+  background-color: #ededee;
   height: 100vh;
   width: 100vw;
 }
 
-.mockexam_header {
-  position: sticky;
-  top: 0;
-}
-
-.mockexam_body_cntr {
-  /* width: ; */
-  height: calc(100vh - 112px);
-  padding: 42px 98px 77px 96px;
+.mockExam_cntr {
+  height: 100%;
+  width: 100%;
   overflow-y: scroll;
 }
 
-.mockexam_body_cntr::-webkit-scrollbar {
+.mockExam_cntr::-webkit-scrollbar {
   display: none;
 }
 
+.mockexam_header {
+  width: 100%;
+  height: 144px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 57px 95.39px 32px 81px;
+}
+
+.first {
+  display: flex;
+  width: 257.47px;
+  height: 31px;
+  margin-bottom: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.heading {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 23px;
+  line-height: 26px;
+  letter-spacing: -1px;
+  color: #313848;
+}
+
+.second {
+  width: 180.61px;
+  height: 54.68px;
+  padding: 17.4px 29px;
+  border-radius: 8px;
+  background-color: #7b7fda;
+  cursor: pointer;
+}
+
+.secondChild {
+  width: 122.61px;
+  height: 21px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.myExamButton {
+  background: none;
+  border: none;
+  width: 92.79px;
+  height: 21.54px;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Mulish;
+  font-size: 16.2263px;
+  text-align: center;
+}
+
 .mockexam_body {
-  /* width: calc(100vw - 32px); */
+  height: calc(100vh - 144px);
+  padding: 24px 98px 77px 96px;
 }
 
 .exam_component_list {
   padding: 41px 0px 0px 0px;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   row-gap: 29px;
   column-gap: 32px;
+}
+
+.exam_component_list:last-child {
+  padding-bottom: 76px;
 }
 
 .image_cntr {
@@ -46,21 +101,21 @@
 
 @media only screen and (max-width: 1341px) {
   .exam_component_list {
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     padding: 41px 0px 0px 0px;
   }
 }
 
 @media only screen and (max-width: 946px) {
   .exam_component_list {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
     padding: 41px 0px 0px 0px;
   }
 }
 
 @media only screen and (max-width: 554px) {
-  .mockexam_body_cntr {
-    padding: 42px 17px 77px 17px;
+  .mockexam_body {
+    padding: 24px 17px 77px 17px;
   }
 
   .image_cntr {

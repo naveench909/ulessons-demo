@@ -1,0 +1,130 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.firstPart {
+  width: 100%;
+  height: 339px;
+  background-color: #7b7fda;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.crown {
+  margin-top: 23.57px;
+  margin-right: 70px;
+}
+
+.places {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* width: 516px; */
+}
+
+.thirdPosition {
+  position: absolute;
+  top: 102px;
+  left: 0px;
+  height: 161.81px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.thirdPosition > .name {
+  margin-left: -20%;
+}
+
+.firstPosition {
+  z-index: 10;
+  position: relative;
+  top: 5px;
+  left: 85px;
+}
+
+.firstPosition > .name {
+  margin-left: 55px;
+  margin-bottom: 23.34px;
+}
+
+.secondPosition {
+  z-index: 9;
+  position: relative;
+  top: 27px;
+  left: 30px;
+}
+
+.secondPosition > .name {
+  margin-bottom: 23.34px;
+  margin-left: 50px;
+}
+
+.name {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 109.2%;
+  letter-spacing: 0.719164px;
+  color: #ffffff;
+}
+
+.secondPart {
+  width: 465px;
+  margin-top: 76px;
+  height: calc(100% - 415px);
+  background-color: #fff;
+  overflow-y: scroll;
+}
+
+.secondPart::-webkit-scrollbar {
+  display: none;
+}
+
+.learner {
+  padding: 14px 24px 9.94px 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 52px;
+  border-bottom: 1px solid #f1efef;
+}
+
+.learnerInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 11px;
+}
+
+.learnerName {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 109.2%;
+  letter-spacing: 0.4px;
+  color: #313848;
+}
+
+.rank {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 109.2%;
+  letter-spacing: 0.4px;
+  color: #313848;
+  opacity: 0.7;
+}

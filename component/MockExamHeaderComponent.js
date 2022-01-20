@@ -1,12 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from 'next/link';
+import Router from 'next/router';
 
 function MockExamHeaderComponent() {
+
+    const redirectTo = () => {
+        Router.push({
+            pathname : '/'
+        })
+    }
+
     return (
         <MockExamHeaderStyles>
             <div className="title_cntr">
-                <div className="icon">
+                <div className="icon" onClick={redirectTo}>
                     <svg width="65" height="59" viewBox="0 0 65 59" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M23.11 35.21L18 30.32L23.11 25" stroke="#313848" strokeWidth="1.5" strokeMiterlimit="10" strokeLinejoin="round"/>
                         <path d="M38 30L18 30" stroke="#313848" strokeWidth="1.5" strokeMiterlimit="10" strokeLinejoin="round"/>
@@ -14,31 +22,36 @@ function MockExamHeaderComponent() {
                 </div>
 
                 <div className="title">
-                    Mock Exams
+                    My Exams
                 </div>
             </div>
 
             <div className="btn_cntr">
-                <Link href='/'><a><button className="all_exam">all exams</button></a></Link>
-                <Link href='/myExams'><a><button className="my_exam">my exams</button></a></Link>
+                <Link href='/myExams/upcoming'><a><button className="upcoming_exam">Upcoming Exams</button></a></Link>
+                <Link href='/myExams/past'><a><button className="past_exam">Past Exam</button></a></Link>
             </div>
         </MockExamHeaderStyles>
     )
 }
 
 const MockExamHeaderStyles = styled.div`
-    width: 100vw;
-    height: 112px;
+    width: 100%;
+    height: 100%;
     background-color: #fff;
-    filter: drop-shadow(0px 0px 4px rgba(49, 56, 72, 0.25));
+    padding: 71px 0px 16px 85px;
+    /* filter: drop-shadow(0px 0px 4px rgba(49, 56, 72, 0.25)); */
 
     .title_cntr{
-        width: 100vw;
+        /* width: 100%; */
         height: 50%;
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        margin-left:81px;
+        /* padding-left:81px; */
+    }
+
+    .icon{
+        cursor: pointer;
     }
 
     .title{
@@ -60,18 +73,25 @@ const MockExamHeaderStyles = styled.div`
     }
 
     .btn_cntr{
-        width: 100vw;
+        /* width: 100%; */
         height: 50%;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        margin-left:94px;
+        /* padding-left:94px; */
     }
 
-    .all_exam, .my_exam{
-        width: 100px;
-        height: inherit;
+    .upcoming_exam, .past_exam{
+        /* width: 100px; */
+        height: 17px;
         text-align: center;
+    }
+    .upcoming_exam{
+        width:158px;
+    }
+
+    .past_exam{
+        width:123px;
     }
 
     button{

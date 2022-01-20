@@ -2,11 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image';
 import exam_image_popup from '../assets/exam_image_popup.png';
+import submit_exam_image from '../public/submit_exam_image.png'
 import {useGlobalContext} from '../component/context';
 
 
 
-function Popup({show, onClose, examObject}) {
+function Popup({show, onClose, examObject, isRegisterd}) {
 
   const{ registerForExam } = useGlobalContext();
 
@@ -15,19 +16,18 @@ function Popup({show, onClose, examObject}) {
       <div className="overlay" onClick={onClose} >
         <div className="modal" onClick={e => e.stopPropagation()}>
             <div className="body">
-                {
                 <div className="main">
-                  <Image src={exam_image_popup} alt="" />
+                  <Image src={isRegisterd ? exam_image_popup : submit_exam_image} alt="" />
                   <div className="title">
-                    Register for Exam
+                    {isRegisterd ? "Register for Exam" : "Submit Exam"}
                   </div>
                   <div className="description">
-                    Are you sure you want to register for this exam
+                    {isRegisterd ? "Are you sure you want to register for this exam"
+                                  : "You have not unattempted questions. Are you sure you want to submit this exam?"}
                   </div>
-                  <button className="register_btn" onClick={() => registerForExam(examObject._id, onClose)}>yes! register</button>
-                  <button className="cancel_btn" onClick={onClose}>cancel</button>
+                  <button className="register_btn" onClick={() => registerForExam(examObject._id, onClose)}>{isRegisterd ? "YES! REGISTER": "Submit"}</button>
+                  <button className="cancel_btn" onClick={onClose}>{isRegisterd ? "CANCEL" : "REVISIT QUESTIONS"}</button>
                 </div>
-                }
             </div>
         </div>
       </div>
@@ -36,6 +36,8 @@ function Popup({show, onClose, examObject}) {
 }
 
 const PopupStyles = styled.div`
+  /* width: 100vw;
+    height: 100vh; */
 
   .overlay{
     position: absolute;
@@ -44,8 +46,6 @@ const PopupStyles = styled.div`
     width: 100%;
     height: 100%;
     background: rgba(49, 56, 72, 0.75);
-    /* background: #313848;
-    opacity: 0.5; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,8 +53,10 @@ const PopupStyles = styled.div`
 
   .modal{
     background: #fff;
-    width: 328px;
-    height: 322px;
+    min-width: 328px;
+    max-width:420px;
+    min-height: 322px;
+    max-height:465px;
     border-radius: 12px;
   }
 
@@ -67,16 +69,11 @@ const PopupStyles = styled.div`
 
   .main{
     height:100%
-    width: 100%;
-    
+    width: 100%;    
     display: flex;
     flex-direction: column;
     justify-content:space-evenly;
     align-items:center;
-  }
-  img{
-    width: 80px;
-    height: 72px;
   }
 
   .title{
@@ -85,16 +82,13 @@ const PopupStyles = styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
-
     font-family: Itim;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 120%;
     letter-spacing: 0.4px;
-
     color: #313848;
-
     margin-top: 21px;
   }
 
@@ -103,19 +97,14 @@ const PopupStyles = styled.div`
     height: 34px;
     display:flex;
     justify-content:center;
-    /* align-items:center; */
-
     font-family: Mulish;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 120%;
-    /* or 17px */
-
     text-align: center;
     letter-spacing: 0.4px;
     margin-top: 9px;
-
     color: #8B8F99;
   }
 
@@ -128,15 +117,19 @@ const PopupStyles = styled.div`
     height: 49px;
     background: #7B7FDA;
     margin-top: 20px;
-
+    /* background: transparent; */
+    border-radius:8px;
+    border:transparent;
+    color:#fff;
   }
 
   .cancel_btn{
     width: 59px;
-    height: 13px;
+    /* height: 13px; */
+    background: transparent;
+    border:transparent;
     color: black;
     margin-top: 20px;
-    
   }
 
 `;

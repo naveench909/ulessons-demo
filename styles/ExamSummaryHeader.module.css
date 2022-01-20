@@ -1,0 +1,52 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding: 52px 0px 12px 113px;
+}
+
+.first {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50%;
+  gap: 16px;
+}
+
+.backButton {
+  cursor: pointer;
+}
+
+.title {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 23px;
+  line-height: 26px;
+  letter-spacing: -1px;
+
+  color: #313848;
+}
+
+.second {
+  width: 532px;
+  display: flex;
+  height: 50%;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.tab {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 115.46%;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #313848;
+  opacity: 0.4;
+  cursor: pointer;
+  margin-bottom: 14px;
+}

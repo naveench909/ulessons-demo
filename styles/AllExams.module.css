@@ -1,3 +1,5 @@
+/* this file not used anywhere */
+
 .mockExam_cntr {
   height: 100vh;
   width: 100vw;
@@ -9,14 +11,13 @@
 }
 
 .mockexam_body_cntr {
-  /* width: ; */
   height: calc(100vh - 112px);
   padding: 42px 98px 77px 96px;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .mockexam_body_cntr::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
 }
 
 .mockexam_body {

@@ -136,14 +136,12 @@ const AppProvider = ({ children }) => {
         console.log("examObjectCopy",examObjectCopy);
 
         examObjectCopy.is_registerd = true;
-        
         for(let i = 0; i < allExams.length; i++){
             if(allExams[i]._id === examUid){
                 allExams[i] = examObjectCopy;
                 break;
             }
         }
-
         onClose();
     }
 
