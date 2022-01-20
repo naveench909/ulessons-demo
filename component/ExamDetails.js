@@ -129,6 +129,10 @@ function ExamDetails({examObject}) {
                     </div>
                 </div>
 
+                <div className={styles.button1}>
+                    <Button examObj={examObject} openPopup={openPopup}/>
+                </div>
+
                 <div className={styles.fourth}>
                     <div className={styles.fourthDivHeading}>Instructions</div>
                     <ul className={styles.instructionList}>

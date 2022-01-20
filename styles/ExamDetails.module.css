@@ -2,7 +2,7 @@
   height: 100vh;
   width: 100vw;
   background-color: #e5e5e5;
-  padding: 71px 96px 135px 96px;
+  padding: 71px 96px 0px 96px;
   overflow-y: auto;
 }
 
@@ -23,6 +23,9 @@
 .first {
   display: flex;
   justify-content: space-between;
+}
+
+.button1 {
 }
 
 .examTitleAndImage {
@@ -93,10 +96,9 @@
 
 .third {
   margin-top: 32px;
-  width: 1248px;
+  /* max-width: 1248px; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  /* justify-content: space-between; */
   column-gap: 20px;
 }
 
@@ -140,8 +142,8 @@
 }
 
 .examDateTitle {
-  width: 129px;
-  height: 32px;
+  max-width: 129px;
+  max-height: 32px;
   font-family: Mulish;
   font-style: normal;
   font-weight: bold;
@@ -165,13 +167,11 @@
   font-weight: bold;
   font-size: 24px;
   line-height: 114.21%;
-  /* identical to box height, or 27px */
-
   display: flex;
   align-items: center;
   letter-spacing: -0.985963px;
-
   color: #313848;
+  /* width: 140px; */
 }
 
 .fourth {
@@ -246,10 +246,34 @@
   color: #313848;
 }
 
-@media only screen and (max-width: 500px) {
+.button1 {
+  display: none;
+  height: 48px;
+  margin-top: 16px;
+}
+
+@media only screen and (max-width: 1150px) {
   .third {
     grid-template-columns: auto auto;
     /* padding: 41px 0px 0px 0px; */
+    width: 100%;
     row-gap: 20px;
   }
+}
+
+@media only screen and (max-width: 900px) {
+  .button {
+    display: none;
+  }
+
+  .button1 {
+    display: block;
+  }
+
+  .container {
+    padding: 28px 16px 0px 16px;
+  }
+}
+
+@media only screen and (max-width: 426px) {
 }

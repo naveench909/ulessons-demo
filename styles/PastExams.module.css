@@ -21,6 +21,7 @@
 }
 
 .upComingExams {
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   row-gap: 31px;
@@ -63,4 +64,24 @@
   color: #ffffff;
 
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1341px) {
+  .upComingExams {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 946px) {
+  .upComingExams {
+    grid-template-columns: 1fr;
+    padding: 20px 16px 40px 16px;
+  }
+}
+
+@media only screen and (max-width: 554px) {
+  .body {
+    padding: 20px 16px 40px 16px;
+  }
 }

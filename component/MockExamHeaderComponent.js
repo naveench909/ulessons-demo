@@ -39,15 +39,12 @@ const MockExamHeaderStyles = styled.div`
     height: 100%;
     background-color: #fff;
     padding: 71px 0px 16px 85px;
-    /* filter: drop-shadow(0px 0px 4px rgba(49, 56, 72, 0.25)); */
 
     .title_cntr{
-        /* width: 100%; */
         height: 50%;
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        /* padding-left:81px; */
     }
 
     .icon{
@@ -73,16 +70,13 @@ const MockExamHeaderStyles = styled.div`
     }
 
     .btn_cntr{
-        /* width: 100%; */
         height: 50%;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        /* padding-left:94px; */
     }
 
     .upcoming_exam, .past_exam{
-        /* width: 100px; */
         height: 17px;
         text-align: center;
     }
@@ -113,12 +107,14 @@ const MockExamHeaderStyles = styled.div`
     }
 
     @media only screen and (max-width: 500px) {
+
+        padding-left: 18px;
         .title_cntr {
-            margin-left: 18px;
+            margin-left: 0px;
         }
 
         .btn_cntr{
-            margin-left: 0;
+            margin-left: -18px;
             justify-content:space-evenly;
         }
     }
