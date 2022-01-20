@@ -1,14 +1,10 @@
 import React from 'react'
 import Router from 'next/router'
-// import styles from '../../../styles/pastExams.module.css'
+import styles from '../../../styles/PastExams.module.css'
 import MockExamHeaderComponent from '../../../component/MockExamHeaderComponent'
 import ExamComponent from '../../../component/ExamComponent'
 import EmptyStatePopup from '../../../component/EmptyStatePopup'
 import { useGlobalContext } from '../../../component/context'
-
-import styles from '../../../styles/pastExams.module.css'
-
-
 
 export default function pastExams() {
 
