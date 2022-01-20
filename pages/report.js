@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/report.module.css'
+import styles from '../styles/Report.module.css'
 import ExamSummaryHeader from '../component/ExamSummaryHeader'
 import ReportComponent from '../component/ReportComponent'
 function report() {
