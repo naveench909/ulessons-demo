@@ -149,18 +149,18 @@ const AppProvider = ({ children }) => {
 
 
     // console.log(quesAndSelectedOption);
-    console.log("all Exams",allExams);
-    // useEffect(() => {
-    //     let array = [];
-    //     questions.map((ques) => {
-    //         let obj = {qid : ques.qid , selectedOptionArr: []};
-    //         array.push(obj);
-    //     })
-    //     setQuesAndSelectedOption(array);
+    // console.log("all Exams",allExams);
+    useEffect(() => {
+        let array = [];
+        questions.map((ques) => {
+            let obj = {qid : ques.qid , selectedOptionArr: []};
+            array.push(obj);
+        })
+        setQuesAndSelectedOption(array);
 
-    //     setExamObject(examObjs);
+        // setExamObject(examObjs);
 
-    // },[])
+    },[])
 
     // useLayoutEffect(() => {
     //     window.addEventListener('resize', updateSize);

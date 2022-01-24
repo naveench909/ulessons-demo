@@ -3,6 +3,7 @@ import styles from '../styles/ExamDetails.module.css'
 import moment from 'moment';
 import Popup from './Popup'
 import Button from '../component/Button'
+import Router from 'next/router';
 
 
 function ExamDetails({examObject}) {
@@ -14,9 +15,13 @@ function ExamDetails({examObject}) {
         if(!exam_object.is_registerd)   setShowModal(true); 
     }
 
+    const redirectTo = () => {
+        Router.push("/")
+    }
+
     return (
         <div className={styles.container}>
-            <div className={styles.icon}>
+            <div className={styles.icon} onClick={redirectTo}>
                 <svg width="38" height="12" viewBox="0 0 38 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.11035 11.21L1.00035 6.32L6.11035 1" stroke="#313848" strokeWidth="1.5" strokeMiterlimit="10" strokeLinejoin="round"/>
                     <path d="M37.4697 6.1001H1.32973" stroke="#313848" strokeWidth="1.5" strokeMiterlimit="10" strokeLinejoin="round"/>                    

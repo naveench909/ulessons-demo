@@ -6,7 +6,7 @@ import ExamComponent from '../../../component/ExamComponent'
 import EmptyStatePopup from '../../../component/EmptyStatePopup'
 import { useGlobalContext } from '../../../component/context'
 
-export default function pastExams() {
+export default function PastExams() {
 
     const { allExams } = useGlobalContext(); 
     // let allExams

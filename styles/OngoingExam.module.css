@@ -1,0 +1,17 @@
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #e5e5e5;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 192px;
+}
+
+.main_body {
+  width: 100%;
+  height: calc(100% - 192px);
+}

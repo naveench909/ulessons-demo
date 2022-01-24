@@ -1,7 +1,8 @@
 import React, {useState , useEffect} from 'react'
 import styled from 'styled-components'
+import moment from 'moment';
 
-function TimerComponent() {
+function TimerComponent({date,duration}) {
 
     const[timerDays, setTimerDays] = useState();
     const[timerHours, setTimerHours] = useState();
@@ -12,8 +13,11 @@ function TimerComponent() {
 
     let interval ;
 
-    const startTime = () => {
-        const countDown = new Date("Dec 28, 2021 23:00:00").getTime();
+    const startTime = (date) => {
+        // const countDown = new Date("2022-01-22T13:20:00.000Z").getTime();
+        const countDown = new Date(date).getTime();
+
+
 
         interval = setInterval(() => {
             const now = new Date().getTime();
@@ -38,19 +42,18 @@ function TimerComponent() {
         })
     }
 
+let counterEndAt;
     useEffect(()=>{
-        startTime();
-    })
+        console.log(typeof(duration))
+        counterEndAt = moment(date).add(parseInt(duration), 'hours')
+        console.log(counterEndAt)
+        startTime(counterEndAt._d);
+    },[])
 
     return (
         <TimerComponentStyles>
             <div className="timer">
                 <div className="pause_svg">
-                    {/* <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="9" cy="9" r="8" stroke="#7B7FDA" strokeWidth="1.69039" strokeMiterlimit="10" strokeLinejoin="round"/>
-                        <line x1="7" y1="6" x2="7" y2="12" stroke="#7B7FDA" strokeWidth="2"/>
-                        <line x1="11" y1="6" x2="11" y2="12" stroke="#7B7FDA" strokeWidth="2"/>
-                    </svg> */}
                     <label className="switch">
                         <input type="checkbox" onClick={() => setShowTimer(!showTimer)} defaultChecked/>
                         <span className="slider round"></span>

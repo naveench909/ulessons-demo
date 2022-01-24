@@ -199,3 +199,9 @@
 
   color: #313848;
 }
+
+@media only screen and (max-width: 500px) {
+  .third {
+    /* margin-top: 56px; */
+  }
+}

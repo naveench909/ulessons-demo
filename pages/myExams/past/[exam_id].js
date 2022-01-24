@@ -1,12 +1,11 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 import ExamSummaryHeader from '../../../component/ExamSummaryHeader'
-import ExamSummaryExamCard from '../../../component/ExamSummaryExamCard';
 import styles from '../../../styles/ExamSummaryOfSelectedExam.module.css'
 import { examObjs } from '../../../data/examObject';
 import ExamSummaryComponent from '../../../component/ExamSummaryComponent';
 
-function examSummaryOfSelectedExam() {
+function ExamSummaryOfSelectedExam() {
 
     const router = useRouter();
     const {exam_id} = router.query;
@@ -20,7 +19,6 @@ function examSummaryOfSelectedExam() {
             </div>
 
             <div className={styles.body}>
-                {/* <ExamSummaryExamCard examObj={examObject}/> */}
                 <ExamSummaryComponent examObject={examObject}/>
             </div>
         </div>
@@ -28,4 +26,4 @@ function examSummaryOfSelectedExam() {
     )
 }
 
-export default examSummaryOfSelectedExam;
+export default ExamSummaryOfSelectedExam;

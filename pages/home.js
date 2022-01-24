@@ -25,7 +25,13 @@ const HomeStyles = styled.div`
 
     .main {
         width: 100vw;
+        min-height: 100vh;
+        background-color: #E5E5E5;
     }
+
+    /* .main::-webkit-scrollbar{
+        display:none;
+    } */
 
     .header {
         position: sticky;
@@ -35,14 +41,15 @@ const HomeStyles = styled.div`
     }
 
     .main_body {
-        width: 100vw;
+        width: 100%;
+        height:calc(100% - 192px);
         /* overflow-y: scroll; */
 
     }
 
-    .main_body::-webkit-scrollbar{
-        /* display:none; */
-    }
+    /* .main_body::-webkit-scrollbar{
+        display:none;
+    } */
 
 `;
 

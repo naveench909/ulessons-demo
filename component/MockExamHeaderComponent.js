@@ -2,9 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import Link from 'next/link';
 import Router from 'next/router';
+import { useRouter } from 'next/router'
 
 function MockExamHeaderComponent() {
+    const router = useRouter();
 
+    let highlight = router.asPath.split('/')[2];
+    console.log(highlight);
+    
     const redirectTo = () => {
         Router.push({
             pathname : '/'
@@ -27,8 +32,36 @@ function MockExamHeaderComponent() {
             </div>
 
             <div className="btn_cntr">
-                <Link href='/myExams/upcoming'><a><button className="upcoming_exam">Upcoming Exams</button></a></Link>
-                <Link href='/myExams/past'><a><button className="past_exam">Past Exam</button></a></Link>
+                <Link href='/myExams/upcoming'>
+                    <a>
+                        <button className="upcoming_exam" style={highlight==='upcoming' ? {opacity:"1"}:{}}>Upcoming Exams</button>
+                        {
+                            highlight === 'upcoming' ? 
+                            (
+                                <svg width="150" height="5" viewBox="0 0 192 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.00594764 2.84384C0.406772 -0.233271 63.9288 -0.222422 111.088 0.311981C141.844 0.660237 192.061 -1.31947 192 1.74263C191.916 5.93996 110.633 4.62259 73.4636 4.35377C32.3591 4.05621 -0.508062 6.78729 0.00594764 2.84384Z" fill="#7B7FDA"/>
+                                </svg>
+                            )
+                            :
+                            null
+                        }
+                    </a>
+                </Link>
+                <Link href='/myExams/past'>
+                    <a>
+                        <button className="past_exam" style={highlight==='past' ? {opacity:"1"}:{}}>Past Exam</button>
+                        {
+                            highlight === 'past' ? 
+                            (
+                                <svg width="120" height="5" viewBox="0 0 192 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.00594764 2.84384C0.406772 -0.233271 63.9288 -0.222422 111.088 0.311981C141.844 0.660237 192.061 -1.31947 192 1.74263C191.916 5.93996 110.633 4.62259 73.4636 4.35377C32.3591 4.05621 -0.508062 6.78729 0.00594764 2.84384Z" fill="#7B7FDA"/>
+                                </svg>
+                            )
+                            :
+                            null
+                        }
+                    </a>
+                </Link>
             </div>
         </MockExamHeaderStyles>
     )
@@ -76,6 +109,13 @@ const MockExamHeaderStyles = styled.div`
         align-items: center;
     }
 
+    .btn_cntr > a{
+        height:28px;
+        display: flex;
+        flex-direction:column;
+        justify-content:space-between;
+    }
+
     .upcoming_exam, .past_exam{
         height: 17px;
         text-align: center;
@@ -101,14 +141,23 @@ const MockExamHeaderStyles = styled.div`
         text-align: center;
         letter-spacing: 1px;
         text-transform: uppercase;
-        color: #313848;
+        color: black;
         opacity: 0.4;
         cursor:pointer;
     }
 
+    .pastExamWithHighlighter > button{
+        color: black;
+        opacity: 0;
+    }
+
+
     @media only screen and (max-width: 500px) {
 
         padding-left: 18px;
+        padding-top: 0px;
+        padding-bottom:0px;
+        
         .title_cntr {
             margin-left: 0px;
         }
@@ -118,6 +167,7 @@ const MockExamHeaderStyles = styled.div`
             justify-content:space-evenly;
         }
     }
+
 `;
 
 export default MockExamHeaderComponent

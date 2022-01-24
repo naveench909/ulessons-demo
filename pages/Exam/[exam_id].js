@@ -1,17 +1,17 @@
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useState } from 'react'
 import { useEffect } from 'react';
 import ExamDetails from '../../component/ExamDetails'
 import { examObjs } from '../../data/examObject';
 
-export default function examDetails() {
+export default function SingleExamDetails() {
     const router = useRouter();
+    // const[examObject , setExamObject] = useState();
     const {exam_id} = router.query;
     // console.log(exam_id);
 
-    let examObject;
-    examObject = examObjs.find((exam) => exam._id === exam_id);
-    
+    // setExamObject(examObjs.find((exam) => exam._id === exam_id))
+    let examObject = examObjs.find((exam) => exam._id === exam_id)
     // console.log("Naveen First",examObject);
     // useEffect(() => {
     //     examObject = examObjs.find((exam) => exam._id === exam_id);
@@ -22,6 +22,19 @@ export default function examDetails() {
         <div>
             <ExamDetails examObject={examObject}/>
         </div>
+        // <div>
+        //     {
+        //         examObject ? 
+        //         (
+        //             <div>
+        //                 <ExamDetails examObject={examObject}/>
+        //             </div>
+        //         )
+        //         :
+        //         null
+        //     }
+        // </div>
+        
     )
 }
 

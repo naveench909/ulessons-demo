@@ -19,3 +19,14 @@
   height: calc(100% - 192px);
   padding: 42px 76px 0px 118px;
 }
+
+@media only screen and (max-width: 500px) {
+  .body {
+    padding: 16px;
+    margin-top: 16px;
+  }
+
+  .header {
+    height: 112px;
+  }
+}

@@ -8,7 +8,7 @@
 
 .modal {
   background: #fff;
-  min-width: 320px;
+  /* min-width: 320px; */
   max-width: 420px;
   min-height: 289px;
   max-height: 336px;

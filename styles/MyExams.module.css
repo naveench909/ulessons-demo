@@ -44,7 +44,8 @@
 
 .viewAllExamBtn {
   height: 50px;
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
   background: #7b7fda;
   border: transparent;
   border-radius: 8px;
@@ -63,4 +64,14 @@
   color: #ffffff;
 
   cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+  .body {
+    padding: 20px 16px 40px 16px;
+    height: calc(100% - 112px);
+  }
+  .header {
+    height: 112px;
+  }
 }

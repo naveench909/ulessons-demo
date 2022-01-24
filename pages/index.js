@@ -28,7 +28,7 @@ export default function Home() {
 
           <div className={styles.first}>
             <div className={styles.icon}>
-              <svg width="38" height="12" viewBox="0 0 38 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="inherit" height="inherit" viewBox="0 0 38 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M6.11035 11.21L1.00035 6.32L6.11035 1" stroke="#313848" strokeWidth="1.5" strokeMiterlimit="10" strokeLinejoin="round"/>
                   <path d="M37.4697 6.1001H1.32973" stroke="#313848" strokeWidth="1.5" strokeMiterlimit="10" strokeLinejoin="round"/>
               </svg>
@@ -50,7 +50,7 @@ export default function Home() {
               </svg>
 
               {/* <Link href="/myExams"><a><button className={styles.myExamButton}>My Exams</button></a></Link> */}
-              <button className={styles.myExamButton} >My Exams</button>
+              <button className={styles.myExamButton}>My Exams</button>
             </div>
           </div>
         </div>

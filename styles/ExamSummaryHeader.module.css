@@ -2,6 +2,10 @@
   width: 100%;
   height: 100%;
   background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
   padding: 52px 0px 12px 113px;
 }
 
@@ -9,12 +13,14 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 50%;
+  height: 27px;
   gap: 16px;
 }
 
 .backButton {
   cursor: pointer;
+  width: 38px;
+  height: 10.21px;
 }
 
 .title {
@@ -29,24 +35,48 @@
 }
 
 .second {
-  width: 532px;
   display: flex;
-  height: 50%;
+  height: 28px;
   justify-content: space-between;
   align-items: flex-end;
+  gap: 30px;
 }
 
 .tab {
+  height: 28px;
+  /* min-width: 150px; */
   font-family: Mulish;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 115.46%;
-  text-align: center;
+  /* text-align: center; */
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #313848;
-  opacity: 0.4;
   cursor: pointer;
-  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    height: 126px;
+    padding: 32px 16px 7px 9px;
+  }
+
+  .backButton {
+    width: 20px;
+    height: 14.21px;
+  }
+
+  .second {
+    width: 100%;
+  }
+
+  .tab {
+    height: 20px;
+    font-size: 11px;
+  }
 }

@@ -5,9 +5,6 @@ import ExamSummaryExamCard from './ExamSummaryExamCard'
 //Component
 import ScoreCard from './ScoreCard'
 
-import PerformanceCard from './PerformanceCard'
-
-
 function ExamSummaryComponent({examObject}) {
     return (
         <div className={styles.container}>
@@ -16,7 +13,6 @@ function ExamSummaryComponent({examObject}) {
                     <ExamSummaryExamCard examObj={examObject}/>
                 </div>
                 <div className={styles.perfomance}>
-                    {/* <PerformanceCard /> */}
                     <ScoreCard />
                 </div>
             </div>

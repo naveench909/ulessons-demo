@@ -5,7 +5,7 @@ import styles from '../styles/Header.module.css';
 import TimerComponent from './TimerComponent';
 import RulerComponent from './RulerComponent';
 
-function Header() {
+function Header({date, duration}) {
 
     return (
         <div className={styles.container}>
@@ -17,7 +17,7 @@ function Header() {
                             <path d="M38 30L18 30" stroke="#313848" strokeWidth="1.5" strokeMiterlimit="10" strokeLinejoin="round"/>
                         </svg>
                     </div>
-                    <TimerComponent/>
+                    <TimerComponent date={date} duration={duration}/>
                 </div>
                 <div className={styles.submit_btn}>
                     <button>SUBMIT EXAM</button>
