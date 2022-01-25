@@ -1,13 +1,17 @@
 import Head from 'next/head';
 import Router from 'next/router';
-
+import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import ExamComponent from '../component/ExamComponent';
 import { useGlobalContext } from '../component/context';
 
+import homeImage from '../public/homeImage.png'
+import homeImage2 from '../public/homeImageMobile.png'
 
 export default function Home() {  
   const {allExams} = useGlobalContext();
+
+  
 
   const redirectTo = () => {
     Router.push({
@@ -49,7 +53,6 @@ export default function Home() {
                 </defs>
               </svg>
 
-              {/* <Link href="/myExams"><a><button className={styles.myExamButton}>My Exams</button></a></Link> */}
               <button className={styles.myExamButton}>My Exams</button>
             </div>
           </div>
@@ -57,7 +60,13 @@ export default function Home() {
 
         <div className={styles.mockexam_body}>
           <div className={styles.image_cntr}>
-            {/* <Image src={image} layout='responsive' height="144px"  /> */}
+            <div className={styles.desktopImage}>
+              <Image src={homeImage} layout='responsive' height='319px' />
+            </div>
+
+            <div className={styles.mobileImage}>
+              <Image src={homeImage2} layout='responsive' />
+            </div>
           </div>
           <div className={styles.exam_component_list}>
             {allExams.map((exam) => {
@@ -71,3 +80,5 @@ export default function Home() {
     </div>
   )
 }
+
+

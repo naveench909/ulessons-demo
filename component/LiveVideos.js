@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from '../styles/Videos.module.css'
-function Videos() {
+function LiveVideos() {
     return (
-        <div className={styles.cntr}>
+        <div className={styles.container}>
             
         </div>
     )
 }
 
-export default Videos
+export default LiveVideos

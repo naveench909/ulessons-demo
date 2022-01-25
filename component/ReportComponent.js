@@ -26,7 +26,6 @@ function ReportComponent() {
                     </div>
                     <div className={styles.testPerformanceBody}>
                         <div className={styles.circle}>
-
                         </div>
                         <div className={styles.perfomanceResultInNumbers}>
                             <div className={styles.rankAndTestAttempted}>

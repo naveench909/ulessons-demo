@@ -88,6 +88,20 @@
   padding: 24px 98px 77px 96px;
 }
 
+.image_cntr {
+  width: inherit;
+  height: 319px;
+  background-color: #7b7fda;
+  border-radius: 8px;
+}
+
+.desktopImage {
+  max-height: 319px;
+}
+.mobileImage {
+  display: none;
+}
+
 .exam_component_list {
   padding: 41px 0px 0px 0px;
   display: grid;
@@ -98,13 +112,6 @@
 
 .exam_component_list:last-child {
   padding-bottom: 76px;
-}
-
-.image_cntr {
-  width: inherit;
-  height: 319px;
-  background-color: #7b7fda;
-  border-radius: 8px;
 }
 
 @media only screen and (max-width: 1341px) {
@@ -121,7 +128,11 @@
   }
 }
 
-@media only screen and (max-width: 554px) {
+@media only screen and (max-width: 500px) {
+  .exam_component_list {
+    padding: 18px 0px 0px 0px;
+    row-gap: 10px;
+  }
   .mockexam_header {
     height: 73px;
     padding: 6px 17px 8px 18px;
@@ -155,5 +166,12 @@
 
   .myExamButton {
     font-size: 11px;
+  }
+
+  .desktopImage {
+    display: none;
+  }
+  .mobileImage {
+    display: block;
   }
 }

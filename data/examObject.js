@@ -7,7 +7,7 @@ export const examObjs = [
         is_locked: true,
         is_published: false,
         registration_close_warning_duration: 48,
-        registration_close_time: "2022-01-21T07:27:17.000Z",
+        registration_close_time: "2022-01-26T07:27:17.000Z",
         published_on: null,
         questions: [
             "61dbe37f447124f7b4dbe777",
@@ -24,7 +24,7 @@ export const examObjs = [
             requirements: "Instruction text 2",
             information: "Instruction text 1"
         },
-        start_time: "2022-01-22T07:27:17.000Z",
+        start_time: "2022-01-28T22:27:17.000Z",
         duration: 5,
         countries: [
             {}
@@ -66,7 +66,7 @@ export const examObjs = [
             requirements: "Instruction text 2",
             information: "Instruction text 1"
         },
-        start_time: "2022-01-22T12:40:00.000Z",
+        start_time: "2022-01-23T12:40:00.000Z",
         duration: 5,
         countries: [
             {}
@@ -419,7 +419,7 @@ export const rankList = [
             "rank": 1,
             "correct_answers": 3,
             "learners_above": 0,
-            "learner_name": "Newest Aswal",
+            "learner_name": "Aswal",
             "learner_id": "303"
         },
         {
@@ -427,7 +427,7 @@ export const rankList = [
             "rank": 1,
             "correct_answers": 3,
             "learners_above": 0,
-            "learner_name": "Shubham Aswal",
+            "learner_name": "Shubham",
             "learner_id": "298"
         },
         {
@@ -493,5 +493,47 @@ export const rankList = [
             "learners_above": 5,
             "learner_name": "Older Aswal",
             "learner_id": "302"
+        },
+        {
+            "percentile": 16.666666666666664,
+            "rank": 6,
+            "correct_answers": 0,
+            "learners_above": 5,
+            "learner_name": "Older Aswal",
+            "learner_id": "302"
+        },
+        {
+            "percentile": 16.666666666666664,
+            "rank": 6,
+            "correct_answers": 0,
+            "learners_above": 5,
+            "learner_name": "Older Aswal",
+            "learner_id": "302"
         }
+        ,
+        {
+            "percentile": 16.666666666666664,
+            "rank": 6,
+            "correct_answers": 0,
+            "learners_above": 5,
+            "learner_name": "Older Aswal",
+            "learner_id": "302"
+        },
+        {
+            "percentile": 16.666666666666664,
+            "rank": 6,
+            "correct_answers": 0,
+            "learners_above": 5,
+            "learner_name": "Older Aswal",
+            "learner_id": "302"
+        },
+        {
+            "percentile": 16.666666666666664,
+            "rank": 6,
+            "correct_answers": 0,
+            "learners_above": 5,
+            "learner_name": "Older Aswal",
+            "learner_id": "302"
+        }
+
     ]

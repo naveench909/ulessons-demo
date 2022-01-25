@@ -76,7 +76,7 @@
 @media only screen and (max-width: 946px) {
   .upComingExams {
     grid-template-columns: 1fr;
-    padding: 2px 0px 0px 3px;
+    padding: 0px 0px 0px 0px;
   }
 }
 

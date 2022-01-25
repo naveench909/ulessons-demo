@@ -2,7 +2,7 @@
   height: 100vh;
   width: 100vw;
   background-color: #e5e5e5;
-  padding: 71px 96px 0px 96px;
+  padding: 71px 96px 135px 96px;
   overflow-y: auto;
 }
 
@@ -19,6 +19,11 @@
 .examDetails {
   margin-top: 47.79px;
   width: 100%;
+}
+
+.titleImage {
+  width: 63px;
+  height: 59px;
 }
 
 .first {
@@ -86,18 +91,13 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
-  /* identical to box height */
-
   letter-spacing: 0.4px;
-
   color: #313848;
-
   opacity: 0.7;
 }
 
 .third {
   margin-top: 32px;
-  /* max-width: 1248px; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 20px;
@@ -130,11 +130,9 @@
   justify-content: center;
   align-items: center;
 }
-
 .timeIcon {
   border-color: #f9ad6d;
 }
-
 .questionIcon {
   border-color: #ea7052;
 }
@@ -216,6 +214,7 @@
 
 .fifth {
   margin-top: 56px;
+  height: 421px;
 }
 
 .fifthHeading {
@@ -224,16 +223,22 @@
   font-weight: normal;
   font-size: 24px;
   line-height: 114.21%;
-  /* identical to box height, or 27px */
-
   letter-spacing: 0.2px;
+  margin-bottom: 34px;
+}
 
-  color: #313848;
+.liveLessonVideosCntr {
+  height: 164px;
+}
+
+.lessonVideosCntr {
+  margin-top: 10px;
+  height: 164px;
 }
 
 .lessonHeading,
 .questHeading {
-  height: 26px;
+  height: 25.28px;
   display: flex;
   align-items: center;
   gap: 7.23px;
@@ -245,6 +250,15 @@
   line-height: 109.2%;
   letter-spacing: 0.4px;
   color: #313848;
+}
+
+.liveLessonVideos {
+  height: 123px;
+  padding-top: 15.71px;
+}
+
+.lessonVideos {
+  padding-top: 15.71px;
 }
 
 .button1 {
@@ -276,5 +290,83 @@
   }
 }
 
-@media only screen and (max-width: 426px) {
+@media only screen and (max-width: 500px) {
+  .icon {
+    width: 20px;
+  }
+
+  .examDetails {
+    margin-top: 30.79px;
+  }
+
+  .titleImage {
+    width: 35px;
+    height: 33.18px;
+  }
+
+  .examTitleAndImage {
+    height: 40.21px;
+  }
+  .examTitle {
+    font-size: 20px;
+  }
+
+  .examGrade {
+    font-size: 13px;
+  }
+
+  .second {
+    margin-top: 20.79px;
+  }
+
+  .third {
+    margin-top: 16px;
+    column-gap: 16px;
+    row-gap: 16px;
+  }
+
+  .examDate,
+  .examTime,
+  .examQuestion,
+  .examStudents {
+    width: 156px;
+    height: 100px;
+  }
+
+  .examDateTitle {
+    width: 116px;
+    font-size: 10px;
+    font-family: Mulish;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 133.03%;
+    /* or 13px */
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: #313848;
+
+    opacity: 0.4;
+  }
+  .examDateContent {
+    font-size: 18px;
+  }
+
+  .fourth {
+    margin-top: 25px;
+  }
+  .fourthDivHeading {
+    font-size: 20px;
+  }
+
+  .instructionList {
+    margin-top: 25px;
+  }
+
+  .fifth {
+    display: none;
+  }
 }

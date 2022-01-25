@@ -1,0 +1,61 @@
+.container {
+  width: 180px;
+  height: 138px;
+}
+
+.lessonImage {
+  background-image: url("../public/Lesson/image.svg");
+  object-fit: contain;
+
+  width: 180px;
+  height: 98px;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.lessonDetails {
+  margin-top: 8px;
+  width: 145px;
+  height: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: space-between;
+}
+
+.lessonName {
+  width: 108px;
+  height: 14px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 134.29%;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #969799;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topic {
+  width: 145px;
+  height: 18px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 134.29%;
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+  color: #313848;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

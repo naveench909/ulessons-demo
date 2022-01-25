@@ -23,7 +23,7 @@ function Popup({show, onClose, examObject, isRegisterd}) {
                   </div>
                   <div className="description">
                     {isRegisterd ? "Are you sure you want to register for this exam"
-                                  : "You have not unattempted questions. Are you sure you want to submit this exam?"}
+                                : "You have not unattempted questions. Are you sure you want to submit this exam?"}
                   </div>
                   <button className="register_btn" onClick={() => registerForExam(examObject._id, onClose)}>{isRegisterd ? "YES! REGISTER": "Submit"}</button>
                   <button className="cancel_btn" onClick={onClose}>{isRegisterd ? "CANCEL" : "REVISIT QUESTIONS"}</button>
@@ -49,6 +49,7 @@ const PopupStyles = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index:10;
   }
 
   .modal{

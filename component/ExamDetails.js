@@ -4,6 +4,9 @@ import moment from 'moment';
 import Popup from './Popup'
 import Button from '../component/Button'
 import Router from 'next/router';
+import LiveVideos from './LiveVideos';
+import LessonVideos from './LessonVideos';
+
 
 
 function ExamDetails({examObject}) {
@@ -22,7 +25,7 @@ function ExamDetails({examObject}) {
     return (
         <div className={styles.container}>
             <div className={styles.icon} onClick={redirectTo}>
-                <svg width="38" height="12" viewBox="0 0 38 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="inherit" height="12" viewBox="0 0 38 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.11035 11.21L1.00035 6.32L6.11035 1" stroke="#313848" strokeWidth="1.5" strokeMiterlimit="10" strokeLinejoin="round"/>
                     <path d="M37.4697 6.1001H1.32973" stroke="#313848" strokeWidth="1.5" strokeMiterlimit="10" strokeLinejoin="round"/>                    
                 </svg>
@@ -33,7 +36,7 @@ function ExamDetails({examObject}) {
                     <div className={styles.examTitleAndImage}>
                         <div className={styles.titleImage}>
                             {examObject.title === "Mathematics" ? 
-                                (<svg width="63" height="59" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                (<svg width="inherit" height="inherit" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.1939 8.63915C15.7977 3.19578 9.07574 -0.76239 3.9647 1.1325C0.048842 2.80168 -0.132413 9.11824 3.23002 12.5278C6.72059 16.048 14.7032 13.1368 15.1939 8.63915Z" fill="#EA7052"/>
                                     <g opacity="0.7">
                                         <path d="M11.5769 4.38379H8.93189L5.4562 10.4222L4.90918 7.94121" stroke="white" strokeWidth="0.651515" strokeMiterlimit="10" strokeLinejoin="round"/>
@@ -45,7 +48,7 @@ function ExamDetails({examObject}) {
                                 </svg>) 
                                 :
                                 (
-                                    <svg width="63" height="59" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg width="inherit" height="inherit" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M14.22 8.28746C14.7851 3.06562 8.49397 -0.731455 3.71052 1.08631C0.0456542 2.68757 -0.123983 8.74706 3.02293 12.0178C6.28977 15.3948 13.7608 12.6021 14.22 8.28746Z" fill="#7B7FDA"/>
                                         <g opacity="0.6">
                                             <path d="M8.39061 6.00524C8.39061 6.13229 8.28752 6.23554 8.16004 6.23554C8.03256 6.23554 7.92947 6.13229 7.92947 6.00524C7.92947 5.87818 8.03256 5.77493 8.16004 5.77493C8.28752 5.77493 8.39061 5.87818 8.39061 6.00524Z" stroke="#FCFBF9" strokeWidth="0.605038" strokeMiterlimit="10" strokeLinejoin="round"/>
@@ -98,7 +101,7 @@ function ExamDetails({examObject}) {
                             Examination Time
                         </div>
                         <div className={styles.examDateContent}>
-                            {moment(examObject.start_time).format('h:mm a')}
+                            {moment(examObject.start_time).format('h:mm A')}
                             <div className={styles.timeIcon}>
                                 <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8.50033 15.5837C4.5882 15.5837 1.41699 12.4125 1.41699 8.50033C1.41699 4.5882 4.5882 1.41699 8.50033 1.41699C12.4125 1.41699 15.5837 4.5882 15.5837 8.50033C15.5837 12.4125 12.4125 15.5837 8.50033 15.5837ZM8.50033 14.167C10.0032 14.167 11.4446 13.57 12.5073 12.5073C13.57 11.4446 14.167 10.0032 14.167 8.50033C14.167 6.99743 13.57 5.55609 12.5073 4.49339C11.4446 3.43068 10.0032 2.83366 8.50033 2.83366C6.99743 2.83366 5.55609 3.43068 4.49339 4.49339C3.43068 5.55609 2.83366 6.99743 2.83366 8.50033C2.83366 10.0032 3.43068 11.4446 4.49339 12.5073C5.55609 13.57 6.99743 14.167 8.50033 14.167ZM9.20866 8.50033H12.042V9.91699H7.79199V4.95866H9.20866V8.50033Z" fill="#F9AD6D" stroke="#F9AD6D"/>
@@ -164,7 +167,7 @@ function ExamDetails({examObject}) {
                         Recommended Learning
                     </div>
 
-                    <div className={styles.lessonVideosCntr}>
+                    <div className={styles.liveLessonVideosCntr}>
                         <div className={styles.lessonHeading}>
                             <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 {/* <mask id="mask0_137_2127" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="27" height="26">
@@ -186,13 +189,12 @@ function ExamDetails({examObject}) {
                             </svg>
                             Live Lessons
                         </div>
-
-                        <div className={styles.lessonVideos}>
-                            
+                        <div className={styles.liveLessonVideos}>
+                            <LiveVideos />
                         </div>
                     </div>
 
-                    <div className={styles.questVideosCntr}>
+                    <div className={styles.lessonVideosCntr}>
                         <div className={styles.questHeading}>
                             <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 {/* <mask id="mask0_137_2118" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="27" height="26">
@@ -204,6 +206,9 @@ function ExamDetails({examObject}) {
                                 </g>
                             </svg>
                             Video Library
+                        </div>
+                        <div className={styles.lessonVideos}>
+                            <LessonVideos />
                         </div>
                     </div>
                 </div>

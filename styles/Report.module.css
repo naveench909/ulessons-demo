@@ -17,5 +17,21 @@
 .body {
   width: 100%;
   height: calc(100% - 192px);
-  padding: 42px 76px 0px 118px;
+  padding: 42px 76px 45px 118px;
+  overflow-y: scroll;
+}
+
+.body::-webkit-scrollbar {
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .header {
+    height: 126px;
+  }
+
+  .body {
+    height: calc(100% - 126px);
+    padding: 22px 16px 45px 16px;
+  }
 }

@@ -5,6 +5,7 @@ import moment from 'moment';
 import Button from './Button';
 import Router from 'next/router';
 import { useRouter } from 'next/router'
+// import MyTimer from './StopWatch';
 
 function ExamComponent({examObj}) {
     const [showModal, setShowModal] = React.useState(false);
@@ -25,8 +26,16 @@ function ExamComponent({examObj}) {
         }
     }
 
+    // const time = new Date(examObj.start_time);
+    // console.log(time);
+    // time.setSeconds(time.getSeconds() + 600);
+
     return (
         <ExamComponentStyles onClick={redirectToExamDetails}>
+            {/* <MyTimer 
+                expiryTimestamp={time}
+                autoStart={false}
+            /> */}
             {
                 !examObj.isRegisterd ?
                     moment(examObj.registration_close_time).diff(moment(new Date()) , 'h') <= examObj.registration_close_warning_duration && moment(examObj.registration_close_time).diff(moment(new Date()) , 'h') > 0? 
@@ -128,16 +137,16 @@ function ExamComponent({examObj}) {
                     <div className="students_content">{examObj.applicant_count} students</div>
                 </div>
             </div>
-            {moment(examObj.registration_close_time).diff(moment(new Date()) , 'h') <= examObj.registration_close_warning_duration && moment(examObj.registration_close_time).diff(moment(new Date()) , 'h') > 0 ?
+            {/* {moment(examObj.registration_close_time).diff(moment(new Date()) , 'h') <= examObj.registration_close_warning_duration && moment(examObj.registration_close_time).diff(moment(new Date()) , 'h') > 0 ?
                 <div className="fourth" onClick={e => e.stopPropagation()}>
                     <Button examObj={examObj} openPopup={openPopup}/>
                 </div>
                 :
                 null
-            }
-            {/* <div className="fourth" onClick={e => e.stopPropagation()}>
+            } */}
+            <div className="fourth" onClick={e => e.stopPropagation()}>
                 <Button examObj={examObj} openPopup={openPopup}/>
-            </div> */}
+            </div>
 
             {showModal ? <Popup examObject={examObj} show={showModal} onClose={() => setShowModal(!showModal)} isRegisterd={true} /> : null}
         </ExamComponentStyles>
@@ -243,6 +252,7 @@ const ExamComponentStyles = styled.div`
         margin-bottom: 22px;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        row-gap: 12px;
     }
 
     .exam_date{

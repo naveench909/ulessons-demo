@@ -1,0 +1,18 @@
+export const list = {
+    id : lessonObject.id,
+    name : lessonObject.name,
+    description : lessonObject.description,
+    contentCode : lessonObject.content_code,
+    isFreebie : lessonObject.freebie,
+    position : lessonObject.position,
+    shouldShowInteractiveQuiz : lessonObject.show_interactive_quiz,
+    isRecommended : lessonObject.recommended,
+    iconThumbnail : lessonObject.icon_thumb,
+    coverThumbnail : lessonObject.cover_thumb,
+    trivia : lessonObject.trivia,
+    freeVideoUrl : lessonObject.free_video_url,
+    videoZipUrl : lessonObject.video_zip,
+    mpdFileUrl : lessonObject.mpd_file,
+    onlineMpdFilePath : lessonObject.online_mpd_file_path,
+    drmAssetId : lessonObject.drm_asset_id,
+}

@@ -12,6 +12,7 @@ function ExamSummaryOfSelectedExam() {
 
     let examObject;
     examObject = examObjs.find((exam) => exam._id === exam_id);
+    
     return (
         <div className={styles.container}>
             <div className={styles.header}>

@@ -35,26 +35,67 @@
 }
 
 .second {
-  display: flex;
+  /* display: flex;
   height: 28px;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 30px;
+  gap: 30px; */
+
+  width: 532px;
+  display: flex;
+  height: 50%;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .tab {
-  height: 28px;
-  /* min-width: 150px; */
+  /* height: 28px;
   font-family: Mulish;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 115.46%;
-  /* text-align: center; */
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #313848;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 115.46%;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #313848;
+  cursor: pointer;
+  margin-bottom: 14px;
+}
+
+.secondMobile {
+  display: none;
+}
+
+.tabM {
+  height: 22px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 115.46%;
+  /* identical to box height, or 13px */
+
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: #313848;
+
+  /* opacity: 0.4; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -78,5 +119,17 @@
   .tab {
     height: 20px;
     font-size: 11px;
+  }
+
+  .second {
+    display: none;
+  }
+
+  .secondMobile {
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
