@@ -66,12 +66,12 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 1341px) {
+/* @media only screen and (max-width: 1341px) {
   .upComingExams {
     grid-template-columns: 1fr 1fr;
     row-gap: 10px;
   }
-}
+} */
 
 @media only screen and (max-width: 946px) {
   .upComingExams {
