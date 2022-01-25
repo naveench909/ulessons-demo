@@ -6,8 +6,8 @@ export const examObjs = [
         learner_ids_for_reminders: [],
         is_locked: true,
         is_published: false,
-        registration_close_warning_duration: 48,
-        registration_close_time: "2022-01-26T07:27:17.000Z",
+        registration_close_warning_duration: 96,
+        registration_close_time: "2022-01-28T07:27:17.000Z",
         published_on: null,
         questions: [
             "61dbe37f447124f7b4dbe777",
@@ -24,7 +24,7 @@ export const examObjs = [
             requirements: "Instruction text 2",
             information: "Instruction text 1"
         },
-        start_time: "2022-01-28T22:27:17.000Z",
+        start_time: "2022-01-30T22:27:17.000Z",
         duration: 5,
         countries: [
             {}
@@ -39,7 +39,8 @@ export const examObjs = [
         subject: {},
         title: "Mathematics",
         createdAt: "2022-01-10T07:42:08.260Z",
-        updatedAt: "2022-01-10T11:29:32.682Z"
+        updatedAt: "2022-01-10T11:29:32.682Z",
+        isRegistered:false
     },
     {
         _id: "61dbd956ce3212ddb2071",
@@ -48,7 +49,7 @@ export const examObjs = [
         is_locked: true,
         is_published: false,
         registration_close_warning_duration: 96,
-        registration_close_time: "2022-01-23T07:27:17.000Z",
+        registration_close_time: "2022-01-28T07:27:17.000Z",
         published_on: null,
         questions: [],
         images: {
@@ -66,7 +67,7 @@ export const examObjs = [
             requirements: "Instruction text 2",
             information: "Instruction text 1"
         },
-        start_time: "2022-01-23T12:40:00.000Z",
+        start_time: "2022-01-30T12:40:00.000Z",
         duration: 5,
         countries: [
             {}
@@ -81,7 +82,8 @@ export const examObjs = [
         subject: {},
         title: "Physics",
         createdAt: "2022-01-10T06:59:34.796Z",
-        updatedAt: "2022-01-10T06:59:44.207Z"
+        updatedAt: "2022-01-10T06:59:44.207Z",
+        isRegistered:true
     },
     {
         _id: "61dbe447124f7b4db764",
@@ -107,8 +109,8 @@ export const examObjs = [
             requirements: "Instruction text 2",
             information: "Instruction text 1"
         },
-        start_time: "2022-02-26T07:27:17.000Z",
-        duration: 5,
+        start_time: "2022-01-25T16:30:00.000Z",
+        duration: 150,
         countries: [
             {}
         ],
@@ -122,7 +124,9 @@ export const examObjs = [
         subject: {},
         title: "Biology",
         createdAt: "2022-01-10T07:42:08.260Z",
-        updatedAt: "2022-01-10T11:29:32.682Z"
+        updatedAt: "2022-01-10T11:29:32.682Z",
+        isRegistered:true
+
     },
     {
         _id: "61dbe3547124f7b4db64",
@@ -163,7 +167,9 @@ export const examObjs = [
         subject: {},
         title: "Chemistry",
         createdAt: "2022-01-10T07:42:08.260Z",
-        updatedAt: "2022-01-10T11:29:32.682Z"
+        updatedAt: "2022-01-10T11:29:32.682Z",
+        isRegistered:false
+
     },
     {
         _id: "61dbe35044712f7b4db64",
@@ -204,7 +210,9 @@ export const examObjs = [
         subject: {},
         title: "Chemistry",
         createdAt: "2022-01-10T07:42:08.260Z",
-        updatedAt: "2022-01-10T11:29:32.682Z"
+        updatedAt: "2022-01-10T11:29:32.682Z",
+        isRegistered:false
+
     },
     {
         _id: "61dbe35447124f7b4db64",
@@ -245,7 +253,9 @@ export const examObjs = [
         subject: {},
         title: "Chemistry",
         createdAt: "2022-01-10T07:42:08.260Z",
-        updatedAt: "2022-01-10T11:29:32.682Z"
+        updatedAt: "2022-01-10T11:29:32.682Z",
+        isRegistered:false
+
     },
     {
         _id: "61de350447124f7b4db64",
@@ -286,7 +296,9 @@ export const examObjs = [
         subject: {},
         title: "Chemistry",
         createdAt: "2022-01-10T07:42:08.260Z",
-        updatedAt: "2022-01-10T11:29:32.682Z"
+        updatedAt: "2022-01-10T11:29:32.682Z",
+        isRegistered:false
+
     },
     {
         _id: "61dbe350447124f7b4b64",
@@ -327,7 +339,9 @@ export const examObjs = [
         subject: {},
         title: "Chemistry",
         createdAt: "2022-01-10T07:42:08.260Z",
-        updatedAt: "2022-01-10T11:29:32.682Z"
+        updatedAt: "2022-01-10T11:29:32.682Z",
+        isRegistered:false
+
     },
     {
         _id: "61dbe35447124f7b4db64",
@@ -368,7 +382,9 @@ export const examObjs = [
         subject: {},
         title: "Chemistry",
         createdAt: "2022-01-10T07:42:08.260Z",
-        updatedAt: "2022-01-10T11:29:32.682Z"
+        updatedAt: "2022-01-10T11:29:32.682Z",
+        isRegistered:false
+
     },
     {
         _id: "61dbe35044124f7b4db64",
@@ -409,7 +425,8 @@ export const examObjs = [
         subject: {},
         title: "Chemistry",
         createdAt: "2022-01-10T07:42:08.260Z",
-        updatedAt: "2022-01-10T11:29:32.682Z"
+        updatedAt: "2022-01-10T11:29:32.682Z",
+        isRegistered:false
     },
 ];
 

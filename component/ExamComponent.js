@@ -1,18 +1,20 @@
 import React from 'react'
-import styled from 'styled-components';
-import Popup from '../component/Popup';
-import moment from 'moment';
-import Button from './Button';
-import Router from 'next/router';
 import { useRouter } from 'next/router'
-// import MyTimer from './StopWatch';
+import Router from 'next/router';
+//styles
+import styled from 'styled-components';
+//component
+import Popup from '../component/Popup';
+import Button from './Button';
+//third party library
+import moment from 'moment';
 
 function ExamComponent({examObj}) {
     const [showModal, setShowModal] = React.useState(false);
     const router = useRouter();
     
     const openPopup = (exam_object) => {
-        if(!exam_object.is_registerd)   setShowModal(true); 
+        if(!exam_object.isRegistered)   setShowModal(true); 
     }
 
     const redirectToExamDetails = () => {
@@ -26,18 +28,10 @@ function ExamComponent({examObj}) {
         }
     }
 
-    // const time = new Date(examObj.start_time);
-    // console.log(time);
-    // time.setSeconds(time.getSeconds() + 600);
-
     return (
         <ExamComponentStyles onClick={redirectToExamDetails}>
-            {/* <MyTimer 
-                expiryTimestamp={time}
-                autoStart={false}
-            /> */}
             {
-                !examObj.isRegisterd ?
+                !examObj.isRegistered ?
                     moment(examObj.registration_close_time).diff(moment(new Date()) , 'h') <= examObj.registration_close_warning_duration && moment(examObj.registration_close_time).diff(moment(new Date()) , 'h') > 0? 
                     (<div className='registration_end_div'>
                         Registration ends in {moment(examObj.registration_close_time).diff(moment(new Date()) , 'days')} days
@@ -81,7 +75,7 @@ function ExamComponent({examObj}) {
                 <div className='second_child'>
                     <div className="exam_class">{examObj.grade.grade_code}</div>
                     {
-                        !examObj.isRegisterd ? 
+                        !examObj.isRegistered ? 
                             moment(examObj.registration_close_time).diff(moment(new Date()) , 'h') <= examObj.registration_close_warning_duration && moment(examObj.registration_close_time).diff(moment(new Date()) , 'h') > 0? 
                             (<div className='registration_end_div1'>
                                 Registration ends in {moment(examObj.registration_close_time).diff(moment(new Date()) , 'days')} days

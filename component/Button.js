@@ -9,7 +9,7 @@ function Button({examObj,openPopup}) {
     const[showStartButton, setStartButton] = useState(false);
 
     const getButtonStyles = () => {
-        if(examObj.is_registerd){
+        if(examObj.isRegistered){
             if(reminder){
                 if(showStartButton){
                     return styles["startBtn"]
@@ -50,8 +50,8 @@ function Button({examObj,openPopup}) {
     return (
         <div className={styles.wrapper}>
             <button className={getButtonStyles()} onClick={() => openPopup(examObj)}>
-                {examObj.is_registerd ? 
-                    reminder ? 
+                {examObj.isRegistered ? 
+                    reminder ?
                             showStartButton ?
                                 (
                                     <div onClick={redirectTo}>
