@@ -26,7 +26,7 @@ function Button({examObj,openPopup}) {
     const redirectTo = () => {
         Router.push({
             // pathname:('/home')
-            pathname:(`http://localhost:3000/Exam/${examObj._id}/ongoing`)
+            pathname:(`/Exam/${examObj._id}/ongoing`)
         })
     }
 

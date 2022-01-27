@@ -9,9 +9,9 @@ import QuestionComponent from '../../../component/QuestionComponent';
 const Ongoing = () => {
     const router = useRouter();
     const {exam_id} = router.query;
-
+    console.log("Naveen Query", exam_id)
     let examObject = examObjs.find((exam) => exam._id === exam_id);
-
+    console.log("Naveen",examObject)
     return (
         <main className={styles.main}>
             <div className={styles.header}>

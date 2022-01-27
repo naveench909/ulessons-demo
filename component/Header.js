@@ -6,7 +6,6 @@ import TimerComponent from './TimerComponent';
 import RulerComponent from './RulerComponent';
 
 function Header({date, duration}) {
-
     return (
         <div className={styles.container}>
             <div className={styles.up_cntr}>
